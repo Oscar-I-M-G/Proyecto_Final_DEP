@@ -1,25 +1,3 @@
-/**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    mcc.h
-
-  @Summary:
-    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
-
-  @Description:
-    This file will be removed in future MCC releases. Use system.h instead.
-    Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
-        Device            :  dsPIC33CH512MP508
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v2.10
-        MPLAB             :  MPLAB X v6.05
-*/
-
 /*
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
@@ -42,31 +20,30 @@
     TERMS.
 */
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "system.h"
-#include "clock.h"
-#include "pin_manager.h"
+#ifndef SPI1_DRIVER_H
+#define SPI1_DRIVER_H
+
+#include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "system_types.h"
-#include "reset.h"
+#include <stdio.h>
+#include "spi1_types.h"
 
-#include "drivers/spi_master.h"
-#include "interrupt_manager.h"
-#include "traps.h"
-#include "delay.h"
-#include "LCDMiniDrivers/lcd.h"
-#include "LCDMiniDrivers/digipot.h"
-#include "LCDMiniDrivers/expander.h"
-#include "spi1_driver.h"
-#include "watchdog.h"
-#include "reset.h"
+/* arbitration interface */
+void spi1_close(void);
 
-#warning "This file will be removed in future MCC releases. Use system.h instead."
+bool spi1_open(spi1_modes spiUniqueConfiguration);
+/* SPI native data exchange function */
+uint8_t spi1_exchangeByte(uint8_t b);
+/* SPI Block move functions }(future DMA support will be here) */
+void spi1_exchangeBlock(void *block, size_t blockSize);
+void spi1_writeBlock(void *block, size_t blockSize);
+void spi1_readBlock(void *block, size_t blockSize);
 
-#endif	/* MCC_H */
-/**
- End of File
-*/
+void spi1_writeByte(uint8_t byte);
+uint8_t spi1_readByte(void);
+
+void spi1_isr(void);
+void spi1_setSpiISR(void(*handler)(void));
+
+#endif // SPI1_DRIVER_H

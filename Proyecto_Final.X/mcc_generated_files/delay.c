@@ -1,26 +1,9 @@
 /**
-  @Generated PIC24 / dsPIC33 / PIC32MM MCUs Header File
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    mcc.h
-
-  @Summary:
-    This is the mcc.h file generated using PIC24 / dsPIC33 / PIC32MM MCUs
-
-  @Description:
-    This file will be removed in future MCC releases. Use system.h instead.
-    Generation Information :
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
-        Device            :  dsPIC33CH512MP508
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v2.10
-        MPLAB             :  MPLAB X v6.05
-*/
-
-/*
+\file
+\addtogroup doc_driver_delay_code
+\brief This file contains the functions to generate delays in the millisecond and microsecond ranges.
+\copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+\page License
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
@@ -40,33 +23,41 @@
 
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
-*/
+**/
 
-#ifndef MCC_H
-#define	MCC_H
-#include <xc.h>
-#include "system.h"
+
+#ifndef FCY
+#define FCY (_XTAL_FREQ/2)
+#endif
 #include "clock.h"
-#include "pin_manager.h"
+#include <libpic30.h>
 #include <stdint.h>
-#include <stdbool.h>
-#include "system_types.h"
-#include "reset.h"
 
-#include "drivers/spi_master.h"
-#include "interrupt_manager.h"
-#include "traps.h"
-#include "delay.h"
-#include "LCDMiniDrivers/lcd.h"
-#include "LCDMiniDrivers/digipot.h"
-#include "LCDMiniDrivers/expander.h"
-#include "spi1_driver.h"
-#include "watchdog.h"
-#include "reset.h"
-
-#warning "This file will be removed in future MCC releases. Use system.h instead."
-
-#endif	/* MCC_H */
 /**
- End of File
+*  \ingroup doc_driver_delay_code
+*  Call this function to delay execution of the program for a certain number of milliseconds
+@param milliseconds - number of milliseconds to delay
 */
+void DELAY_milliseconds(uint16_t milliseconds) {
+    while(milliseconds--){ 
+        __delay_ms(1); 
+    }
+}
+
+/**
+*  \ingroup doc_driver_delay_code
+*  Call this function to delay execution of the program for a certain number of microseconds
+@param microseconds - number of microseconds to delay
+*/
+void DELAY_microseconds(uint16_t microseconds) {
+    while( microseconds >= 32)
+    {
+        __delay_us(32);
+        microseconds -= 32;
+    }
+    
+    while(microseconds--)
+    {
+        __delay_us(1);
+    }
+}
