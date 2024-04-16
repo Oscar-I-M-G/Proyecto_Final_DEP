@@ -52,4 +52,10 @@
 */
 void INTERRUPT_Initialize (void)
 {
+    //    CNEI: Change Notification E
+    //    Priority: 1
+        IPC19bits.CNEIP = 1;
+    //    TI: Timer 1
+    //    Priority: 1
+        IPC0bits.T1IP = 1;
 }

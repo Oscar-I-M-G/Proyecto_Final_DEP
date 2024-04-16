@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/drivers/spi_master.c mcc_generated_files/LCDMiniDrivers/lcd.c mcc_generated_files/LCDMiniDrivers/digpot.c mcc_generated_files/LCDMiniDrivers/expander.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/reset.c mcc_generated_files/spi1_driver.c mcc_generated_files/delay.c main.c pintar_lcd.c
+SOURCEFILES_QUOTED_IF_SPACED=mcc_generated_files/drivers/spi_master.c mcc_generated_files/LCDMiniDrivers/lcd.c mcc_generated_files/LCDMiniDrivers/digpot.c mcc_generated_files/LCDMiniDrivers/expander.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/reset.c mcc_generated_files/spi1_driver.c mcc_generated_files/delay.c main.c pintar_lcd.c mcc_generated_files/tmr1.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/lcd.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/digpot.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/expander.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/spi1_driver.o ${OBJECTDIR}/mcc_generated_files/delay.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pintar_lcd.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o.d ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/lcd.o.d ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/digpot.o.d ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/expander.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/reset.o.d ${OBJECTDIR}/mcc_generated_files/spi1_driver.o.d ${OBJECTDIR}/mcc_generated_files/delay.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pintar_lcd.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/lcd.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/digpot.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/expander.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/spi1_driver.o ${OBJECTDIR}/mcc_generated_files/delay.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pintar_lcd.o ${OBJECTDIR}/mcc_generated_files/tmr1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o.d ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/lcd.o.d ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/digpot.o.d ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/expander.o.d ${OBJECTDIR}/mcc_generated_files/system.o.d ${OBJECTDIR}/mcc_generated_files/clock.o.d ${OBJECTDIR}/mcc_generated_files/mcc.o.d ${OBJECTDIR}/mcc_generated_files/pin_manager.o.d ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o.d ${OBJECTDIR}/mcc_generated_files/traps.o.d ${OBJECTDIR}/mcc_generated_files/reset.o.d ${OBJECTDIR}/mcc_generated_files/spi1_driver.o.d ${OBJECTDIR}/mcc_generated_files/delay.o.d ${OBJECTDIR}/main.o.d ${OBJECTDIR}/pintar_lcd.o.d ${OBJECTDIR}/mcc_generated_files/tmr1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/lcd.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/digpot.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/expander.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/spi1_driver.o ${OBJECTDIR}/mcc_generated_files/delay.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pintar_lcd.o
+OBJECTFILES=${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/lcd.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/digpot.o ${OBJECTDIR}/mcc_generated_files/LCDMiniDrivers/expander.o ${OBJECTDIR}/mcc_generated_files/system.o ${OBJECTDIR}/mcc_generated_files/clock.o ${OBJECTDIR}/mcc_generated_files/mcc.o ${OBJECTDIR}/mcc_generated_files/pin_manager.o ${OBJECTDIR}/mcc_generated_files/interrupt_manager.o ${OBJECTDIR}/mcc_generated_files/traps.o ${OBJECTDIR}/mcc_generated_files/reset.o ${OBJECTDIR}/mcc_generated_files/spi1_driver.o ${OBJECTDIR}/mcc_generated_files/delay.o ${OBJECTDIR}/main.o ${OBJECTDIR}/pintar_lcd.o ${OBJECTDIR}/mcc_generated_files/tmr1.o
 
 # Source Files
-SOURCEFILES=mcc_generated_files/drivers/spi_master.c mcc_generated_files/LCDMiniDrivers/lcd.c mcc_generated_files/LCDMiniDrivers/digpot.c mcc_generated_files/LCDMiniDrivers/expander.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/reset.c mcc_generated_files/spi1_driver.c mcc_generated_files/delay.c main.c pintar_lcd.c
+SOURCEFILES=mcc_generated_files/drivers/spi_master.c mcc_generated_files/LCDMiniDrivers/lcd.c mcc_generated_files/LCDMiniDrivers/digpot.c mcc_generated_files/LCDMiniDrivers/expander.c mcc_generated_files/system.c mcc_generated_files/clock.c mcc_generated_files/mcc.c mcc_generated_files/pin_manager.c mcc_generated_files/interrupt_manager.c mcc_generated_files/traps.c mcc_generated_files/reset.c mcc_generated_files/spi1_driver.c mcc_generated_files/delay.c main.c pintar_lcd.c mcc_generated_files/tmr1.c
 
 
 
@@ -179,6 +179,12 @@ ${OBJECTDIR}/pintar_lcd.o: pintar_lcd.c  .generated_files/flags/default/82884c11
 	@${RM} ${OBJECTDIR}/pintar_lcd.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  pintar_lcd.c  -o ${OBJECTDIR}/pintar_lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/pintar_lcd.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/mcc_generated_files/tmr1.o: mcc_generated_files/tmr1.c  .generated_files/flags/default/b9f40473a0f5bfe6430129ef465b7a310602e40a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr1.c  -o ${OBJECTDIR}/mcc_generated_files/tmr1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr1.o.d"      -g -D__DEBUG -D__MPLAB_DEBUGGER_PK3=1  -mno-eds-warn  -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/mcc_generated_files/drivers/spi_master.o: mcc_generated_files/drivers/spi_master.c  .generated_files/flags/default/38fc8febff52c61e961c22842cbdffd9d3c8323f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}/mcc_generated_files/drivers" 
@@ -269,6 +275,12 @@ ${OBJECTDIR}/pintar_lcd.o: pintar_lcd.c  .generated_files/flags/default/55034c74
 	@${RM} ${OBJECTDIR}/pintar_lcd.o.d 
 	@${RM} ${OBJECTDIR}/pintar_lcd.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  pintar_lcd.c  -o ${OBJECTDIR}/pintar_lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/pintar_lcd.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/mcc_generated_files/tmr1.o: mcc_generated_files/tmr1.c  .generated_files/flags/default/6f70e1f29fd11f413ae9582bd6ecfce34f82f529 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}/mcc_generated_files" 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o.d 
+	@${RM} ${OBJECTDIR}/mcc_generated_files/tmr1.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  mcc_generated_files/tmr1.c  -o ${OBJECTDIR}/mcc_generated_files/tmr1.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/mcc_generated_files/tmr1.o.d"      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

@@ -12,13 +12,17 @@ static uint8_t row1_display[ROW_LENGTH] = "OSCAR I.M.G.";
 
 static uint8_t* Prow0 = &row0_display;
 static uint8_t* Prow1 = &row1_display;
+char row0[ROW_LENGTH];
+char row1[ROW_LENGTH];
 
 // This prints both lines of the screen 
 void drawScreen(){
     lcd_writeString(Prow1, 1);
     lcd_writeString(Prow0, 0);
 }
-void updateStrings(char row0[ROW_LENGTH],char row1[ROW_LENGTH]){
+void updateStrings(char string1[16],char string2[16]){
+    sprintf(row0,string1);
+    sprintf(row1,string2);
     Prow0 = (uint8_t*) &row0;
     Prow1 = (uint8_t*) &row1;
 }

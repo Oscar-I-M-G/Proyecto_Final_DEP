@@ -54,6 +54,11 @@
 #include "pin_manager.h"
 
 /**
+ Section: File specific functions
+*/
+void (*SWITCH_3_InterruptHandler)(void) = NULL;
+
+/**
  Section: Driver Interface Function Definitions
 */
 void PIN_MANAGER_Initialize (void)
@@ -73,7 +78,7 @@ void PIN_MANAGER_Initialize (void)
     TRISA = 0x001F;
     TRISB = 0xFBFD;
     TRISC = 0xFF77;
-    TRISD = 0xFFE7;
+    TRISD = 0xFF67;
     TRISE = 0xFFFF;
 
     /****************************************************************************
@@ -83,7 +88,7 @@ void PIN_MANAGER_Initialize (void)
     CNPDB = 0x0000;
     CNPDC = 0x0000;
     CNPDD = 0x0000;
-    CNPDE = 0x0000;
+    CNPDE = 0x0200;
     CNPUA = 0x0000;
     CNPUB = 0x0000;
     CNPUC = 0x0000;
@@ -113,10 +118,74 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_RPCON(0x0000); // unlock PPS
 
+    RPOR5bits.RP42R = 0x0006;    //RB10->SPI1:SCK1
     RPOR9bits.RP51R = 0x0005;    //RC3->SPI1:SDO1
     RPINR20bits.SDI1R = 0x0046;    //RD6->SPI1:SDI1
-    RPOR5bits.RP42R = 0x0006;    //RB10->SPI1:SCK1
 
     __builtin_write_RPCON(0x0800); // lock PPS
+    
+    /****************************************************************************
+     * Interrupt On Change: negative
+     ***************************************************************************/
+    CNEN1Ebits.CNEN1E9 = 1;    //Pin : RE9
+    /****************************************************************************
+     * Interrupt On Change: flag
+     ***************************************************************************/
+    CNFEbits.CNFE9 = 0;    //Pin : RE9
+    /****************************************************************************
+     * Interrupt On Change: config
+     ***************************************************************************/
+    CNCONEbits.CNSTYLE = 1;    //Config for PORTE
+    CNCONEbits.ON = 1;    //Config for PORTE
+    
+    /* Initialize IOC Interrupt Handler*/
+    SWITCH_3_SetInterruptHandler(&SWITCH_3_CallBack);
+    
+    /****************************************************************************
+     * Interrupt On Change: Interrupt Enable
+     ***************************************************************************/
+    IFS4bits.CNEIF = 0; //Clear CNEI interrupt flag
+    IEC4bits.CNEIE = 1; //Enable CNEI interrupt
+}
+
+/*
+ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
+{
+
+}
+ */
+
+void SWITCH_3_SetInterruptHandler(void (* InterruptHandler)(void))
+{ 
+    IEC4bits.CNEIE = 0; //Disable CNEI interrupt
+    SWITCH_3_InterruptHandler = InterruptHandler; 
+    IEC4bits.CNEIE = 1; //Enable CNEI interrupt
+}
+
+void SWITCH_3_SetIOCInterruptHandler(void *handler)
+{ 
+    SWITCH_3_SetInterruptHandler(handler);
+}
+
+/* Interrupt service routine for the CNEI interrupt. */
+void __attribute__ (( interrupt, no_auto_psv )) _CNEInterrupt ( void )
+{
+    if(IFS4bits.CNEIF == 1)
+    {
+        if(CNFEbits.CNFE9 == 1)
+        {
+            if(SWITCH_3_InterruptHandler) 
+            { 
+                SWITCH_3_InterruptHandler(); 
+            }
+            
+            CNFEbits.CNFE9 = 0;  //Clear flag for Pin - RE9
+
+        }
+        
+        
+        // Clear the flag
+        IFS4bits.CNEIF = 0;
+    }
 }
 

@@ -10,7 +10,7 @@
 
 
 void drawScreen(void);
-void updateStrings(char row0[16],char row1[16]);
+void updateStrings(char string1[16],char string2[16]);
 void contrastScreen(void);
 void clearScreen(void);
 

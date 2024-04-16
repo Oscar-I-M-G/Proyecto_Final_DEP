@@ -657,11 +657,11 @@
   @Example
     <code>
     // Set RD4 high (1)
-    LCDMini_nRESET_SetHigh();
+    LCDMini_nReset_SetHigh();
     </code>
 
 */
-#define LCDMini_nRESET_SetHigh()          (_LATD4 = 1)
+#define LCDMini_nReset_SetHigh()          (_LATD4 = 1)
 /**
   @Summary
     Sets the GPIO pin, RD4, low using LATD4.
@@ -681,11 +681,11 @@
   @Example
     <code>
     // Set RD4 low (0)
-    LCDMini_nRESET_SetLow();
+    LCDMini_nReset_SetLow();
     </code>
 
 */
-#define LCDMini_nRESET_SetLow()           (_LATD4 = 0)
+#define LCDMini_nReset_SetLow()           (_LATD4 = 0)
 /**
   @Summary
     Toggles the GPIO pin, RD4, using LATD4.
@@ -705,11 +705,11 @@
   @Example
     <code>
     // Toggle RD4
-    LCDMini_nRESET_Toggle();
+    LCDMini_nReset_Toggle();
     </code>
 
 */
-#define LCDMini_nRESET_Toggle()           (_LATD4 ^= 1)
+#define LCDMini_nReset_Toggle()           (_LATD4 ^= 1)
 /**
   @Summary
     Reads the value of the GPIO pin, RD4.
@@ -731,11 +731,11 @@
     uint16_t portValue;
 
     // Read RD4
-    postValue = LCDMini_nRESET_GetValue();
+    postValue = LCDMini_nReset_GetValue();
     </code>
 
 */
-#define LCDMini_nRESET_GetValue()         _RD4
+#define LCDMini_nReset_GetValue()         _RD4
 /**
   @Summary
     Configures the GPIO pin, RD4, as an input.
@@ -755,11 +755,11 @@
   @Example
     <code>
     // Sets the RD4 as an input
-    LCDMini_nRESET_SetDigitalInput();
+    LCDMini_nReset_SetDigitalInput();
     </code>
 
 */
-#define LCDMini_nRESET_SetDigitalInput()  (_TRISD4 = 1)
+#define LCDMini_nReset_SetDigitalInput()  (_TRISD4 = 1)
 /**
   @Summary
     Configures the GPIO pin, RD4, as an output.
@@ -779,11 +779,11 @@
   @Example
     <code>
     // Sets the RD4 as an output
-    LCDMini_nRESET_SetDigitalOutput();
+    LCDMini_nReset_SetDigitalOutput();
     </code>
 
 */
-#define LCDMini_nRESET_SetDigitalOutput() (_TRISD4 = 0)
+#define LCDMini_nReset_SetDigitalOutput() (_TRISD4 = 0)
 /**
   @Summary
     Sets the GPIO pin, RD6, high using LATD6.
@@ -930,6 +930,298 @@
 
 */
 #define SDI1_SetDigitalOutput() (_TRISD6 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RD7, high using LATD7.
+
+  @Description
+    Sets the GPIO pin, RD7, high using LATD7.
+
+  @Preconditions
+    The RD7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RD7 high (1)
+    GREEN_LED_SetHigh();
+    </code>
+
+*/
+#define GREEN_LED_SetHigh()          (_LATD7 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RD7, low using LATD7.
+
+  @Description
+    Sets the GPIO pin, RD7, low using LATD7.
+
+  @Preconditions
+    The RD7 must be set to an output.
+
+  @Returns
+ None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RD7 low (0)
+    GREEN_LED_SetLow();
+    </code>
+
+*/
+#define GREEN_LED_SetLow()           (_LATD7 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RD7, using LATD7.
+
+  @Description
+    Toggles the GPIO pin, RD7, using LATD7.
+
+  @Preconditions
+    The RD7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RD7
+    GREEN_LED_Toggle();
+    </code>
+
+*/
+#define GREEN_LED_Toggle()           (_LATD7 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RD7.
+
+  @Description
+    Reads the value of the GPIO pin, RD7.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RD7
+    postValue = GREEN_LED_GetValue();
+    </code>
+
+*/
+#define GREEN_LED_GetValue()         _RD7
+/**
+  @Summary
+    Configures the GPIO pin, RD7, as an input.
+
+  @Description
+    Configures the GPIO pin, RD7, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RD7 as an input
+    GREEN_LED_SetDigitalInput();
+    </code>
+
+*/
+#define GREEN_LED_SetDigitalInput()  (_TRISD7 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RD7, as an output.
+
+  @Description
+    Configures the GPIO pin, RD7, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RD7 as an output
+    GREEN_LED_SetDigitalOutput();
+    </code>
+
+*/
+#define GREEN_LED_SetDigitalOutput() (_TRISD7 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE9, high using LATE9.
+
+  @Description
+    Sets the GPIO pin, RE9, high using LATE9.
+
+  @Preconditions
+    The RE9 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE9 high (1)
+    SWITCH_3_SetHigh();
+    </code>
+
+*/
+#define SWITCH_3_SetHigh()          (_LATE9 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE9, low using LATE9.
+
+  @Description
+    Sets the GPIO pin, RE9, low using LATE9.
+
+  @Preconditions
+    The RE9 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE9 low (0)
+    SWITCH_3_SetLow();
+    </code>
+
+*/
+#define SWITCH_3_SetLow()           (_LATE9 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE9, using LATE9.
+
+  @Description
+    Toggles the GPIO pin, RE9, using LATE9.
+
+  @Preconditions
+    The RE9 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE9
+    SWITCH_3_Toggle();
+    </code>
+
+*/
+#define SWITCH_3_Toggle()           (_LATE9 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE9.
+
+  @Description
+    Reads the value of the GPIO pin, RE9.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE9
+    postValue = SWITCH_3_GetValue();
+    </code>
+
+*/
+#define SWITCH_3_GetValue()         _RE9
+/**
+  @Summary
+    Configures the GPIO pin, RE9, as an input.
+
+  @Description
+    Configures the GPIO pin, RE9, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE9 as an input
+    SWITCH_3_SetDigitalInput();
+    </code>
+
+*/
+#define SWITCH_3_SetDigitalInput()  (_TRISE9 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE9, as an output.
+
+  @Description
+    Configures the GPIO pin, RE9, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE9 as an output
+    SWITCH_3_SetDigitalOutput();
+    </code>
+
+*/
+#define SWITCH_3_SetDigitalOutput() (_TRISE9 = 0)
 
 /**
     Section: Function Prototypes
@@ -965,6 +1257,67 @@
 */
 void PIN_MANAGER_Initialize (void);
 
+/**
+  @Summary
+    Callback for SWITCH_3 Pin.
+
+  @Description
+    This routine is callback for SWITCH_3 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        SWITCH_3_SetInterruptHandler(&SWITCH_3_CallBack);
+    </code>
+*/
+void SWITCH_3_CallBack(void);
+
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_3_SetInterruptHandler(&SWITCH_3_CallBack);
+    </code>
+*/
+void SWITCH_3_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_3_SetIOCInterruptHandler(&SWITCH_3_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_3_SetInterruptHandler instead."))) SWITCH_3_SetIOCInterruptHandler(void *handler);
 
 
 #endif

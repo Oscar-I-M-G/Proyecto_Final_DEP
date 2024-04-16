@@ -203,13 +203,14 @@
 #include "system.h"
 #include "system_types.h"
 #include "drivers/spi_master.h"
+#include "tmr1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
 #include "delay.h"
+#include "spi1_driver.h"
 #include "LCDMiniDrivers/lcd.h"
 #include "LCDMiniDrivers/digipot.h"
 #include "LCDMiniDrivers/expander.h"
-#include "spi1_driver.h"
 
 void SYSTEM_Initialize(void)
 {
@@ -217,6 +218,7 @@ void SYSTEM_Initialize(void)
     INTERRUPT_Initialize();
     CLOCK_Initialize();
     lcd_setup();
+    TMR1_Initialize();
     INTERRUPT_GlobalEnable();
     SYSTEM_CORCONModeOperatingSet(CORCON_MODE_PORVALUES);
 }
