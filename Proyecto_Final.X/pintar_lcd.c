@@ -6,27 +6,28 @@
 // Row length
 #define ROW_LENGTH 16
 
-uint8_t row0_display[ROW_LENGTH] = "";
-uint8_t row1_display[ROW_LENGTH] = "";
+// Inicializacion 
+static uint8_t row0_display[ROW_LENGTH] = "MUESTREO PWM";
+static uint8_t row1_display[ROW_LENGTH] = "OSCAR I.M.G.";
 
-uint8_t* Prow0 = &row0_display;
-uint8_t* Prow1 = &row1_display;
-
-char row0[ROW_LENGTH];
-char row1[ROW_LENGTH];
+static uint8_t* Prow0 = &row0_display;
+static uint8_t* Prow1 = &row1_display;
 
 // This prints both lines of the screen 
 void drawScreen(){
     lcd_writeString(Prow1, 1);
     lcd_writeString(Prow0, 0);
 }
-void updateStrings(){
+void updateStrings(char row0[ROW_LENGTH],char row1[ROW_LENGTH]){
     Prow0 = (uint8_t*) &row0;
     Prow1 = (uint8_t*) &row1;
 }
 
-void contrastAndClear(){
+void contrastScreen(){
     lcd_setContrast(0x20);
+}
+
+void clearScreen(){
     lcd_clearDisplay();
 }
 

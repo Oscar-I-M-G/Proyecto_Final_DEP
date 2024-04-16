@@ -7,21 +7,18 @@
   Section: Included Files
 */
 #include "mcc_generated_files/system.h"
+#include "pintar_lcd.h"
 
-/*
-                         Main application
- */
 int main(void)
 {
-    // initialize the device
+    contrastScreen();
     SYSTEM_Initialize();
+    clearScreen();
     while (1)
     {
-        // Add your application code
+        drawScreen();
     }
     return 1; 
 }
-/**
- End of File
-*/
+
 
