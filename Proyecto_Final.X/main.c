@@ -1,6 +1,12 @@
 /**
+<<<<<<< HEAD
  * OSCAR IVAN MORENO GUTIERREZ
  * PROYECTO FINAL
+=======
+ *
+ * OSCAR IVAN MORENO GUTIERREZ
+ * Proyecto Final
+>>>>>>> main
 */
 
 /**
