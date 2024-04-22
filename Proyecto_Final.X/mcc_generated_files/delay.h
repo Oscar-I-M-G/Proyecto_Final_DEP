@@ -1,26 +1,10 @@
 /**
-  System Interrupts Generated Driver File 
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    interrupt_manager.h
-
-  @Summary:
-    This is the generated driver implementation file for setting up the
-    interrupts using PIC24 / dsPIC33 / PIC32MM MCUs
-
-  @Description:
-    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs interrupts.
-    Generation Information : 
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
-        Device            :  dsPIC33CH512MP508
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v2.10
-        MPLAB             :  MPLAB X v6.05
-*/
-/*
+\file
+\defgroup doc_driver_delay_code Delay Driver Source Code Reference
+\ingroup doc_driver_delay
+\brief This file contains the API to generate delays in the millisecond and microsecond ranges.
+\copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+\page License
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
@@ -42,26 +26,12 @@
     TERMS.
 */
 
-/**
-    Section: Includes
-*/
-#include <xc.h>
+#ifndef _DELAY_H
+#define _DELAY_H
 
-/**
-    void INTERRUPT_Initialize (void)
-*/
-void INTERRUPT_Initialize (void)
-{
-    //    CCPI: CCP1 Capture/Compare Event
-    //    Priority: 1
-        IPC1bits.CCP1IP = 1;
-    //    CCTI: CCP1 Timer Event
-    //    Priority: 1
-        IPC1bits.CCT1IP = 1;
-    //    CNEI: Change Notification E
-    //    Priority: 1
-        IPC19bits.CNEIP = 1;
-    //    TI: Timer 1
-    //    Priority: 1
-        IPC0bits.T1IP = 1;
-}
+#include <stdint.h>
+
+void DELAY_milliseconds(uint16_t milliseconds);
+void DELAY_microseconds(uint16_t microseconds);
+
+#endif	// _DELAY_H

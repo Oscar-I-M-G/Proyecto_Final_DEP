@@ -1,26 +1,9 @@
 /**
-  System Interrupts Generated Driver File 
-
-  @Company:
-    Microchip Technology Inc.
-
-  @File Name:
-    interrupt_manager.h
-
-  @Summary:
-    This is the generated driver implementation file for setting up the
-    interrupts using PIC24 / dsPIC33 / PIC32MM MCUs
-
-  @Description:
-    This source file provides implementations for PIC24 / dsPIC33 / PIC32MM MCUs interrupts.
-    Generation Information : 
-        Product Revision  :  PIC24 / dsPIC33 / PIC32MM MCUs - 1.171.4
-        Device            :  dsPIC33CH512MP508
-    The generated drivers are tested against the following:
-        Compiler          :  XC16 v2.10
-        MPLAB             :  MPLAB X v6.05
-*/
-/*
+\file
+\addtogroup doc_driver_delay_code
+\brief This file contains the functions to generate delays in the millisecond and microsecond ranges.
+\copyright (c) 2020 Microchip Technology Inc. and its subsidiaries.
+\page License
     (c) 2020 Microchip Technology Inc. and its subsidiaries. You may use this
     software and any derivatives exclusively with Microchip products.
 
@@ -40,28 +23,41 @@
 
     MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE
     TERMS.
-*/
+**/
+
+
+#ifndef FCY
+#define FCY (_XTAL_FREQ/2)
+#endif
+#include "clock.h"
+#include <libpic30.h>
+#include <stdint.h>
 
 /**
-    Section: Includes
+*  \ingroup doc_driver_delay_code
+*  Call this function to delay execution of the program for a certain number of milliseconds
+@param milliseconds - number of milliseconds to delay
 */
-#include <xc.h>
+void DELAY_milliseconds(uint16_t milliseconds) {
+    while(milliseconds--){ 
+        __delay_ms(1); 
+    }
+}
 
 /**
-    void INTERRUPT_Initialize (void)
+*  \ingroup doc_driver_delay_code
+*  Call this function to delay execution of the program for a certain number of microseconds
+@param microseconds - number of microseconds to delay
 */
-void INTERRUPT_Initialize (void)
-{
-    //    CCPI: CCP1 Capture/Compare Event
-    //    Priority: 1
-        IPC1bits.CCP1IP = 1;
-    //    CCTI: CCP1 Timer Event
-    //    Priority: 1
-        IPC1bits.CCT1IP = 1;
-    //    CNEI: Change Notification E
-    //    Priority: 1
-        IPC19bits.CNEIP = 1;
-    //    TI: Timer 1
-    //    Priority: 1
-        IPC0bits.T1IP = 1;
+void DELAY_microseconds(uint16_t microseconds) {
+    while( microseconds >= 32)
+    {
+        __delay_us(32);
+        microseconds -= 32;
+    }
+    
+    while(microseconds--)
+    {
+        __delay_us(1);
+    }
 }

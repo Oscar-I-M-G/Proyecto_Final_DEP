@@ -1,0 +1,5 @@
+<<<<<<<< HEAD:Proyecto_Final.X/.generated_files/flags/default/55034c74b7aea2d3db1fd35d533dea8c201f1d4e
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/Users/oimg/Documents/trabajosdsPIC/Final_Project/Proyecto_Final.X/pintar_lcd.c
+========
+ -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/Users/oimg/Documents/trabajosdsPIC/Final_Project/Proyecto_Final.X/mcc_generated_files/mcc.c
+>>>>>>>> main:Proyecto_Final.X/.generated_files/flags/default/f55202284a06bcc5763d774f07fb1893195f9925

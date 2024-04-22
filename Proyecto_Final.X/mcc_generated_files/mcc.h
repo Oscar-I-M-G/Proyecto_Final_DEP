@@ -53,10 +53,18 @@
 #include "system_types.h"
 #include "reset.h"
 
-#include "reset.h"
+#include "delay.h"
+#include "LCDMiniDrivers/lcd.h"
+#include "LCDMiniDrivers/digipot.h"
+#include "LCDMiniDrivers/expander.h"
 #include "interrupt_manager.h"
 #include "traps.h"
+#include "spi1_driver.h"
 #include "watchdog.h"
+#include "reset.h"
+#include "drivers/spi_master.h"
+#include "sccp1_compare.h"
+#include "tmr1.h"
 
 #warning "This file will be removed in future MCC releases. Use system.h instead."
 
