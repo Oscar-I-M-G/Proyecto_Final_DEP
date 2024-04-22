@@ -21,6 +21,9 @@
 /**
  * CALLBACKS
  */
+/**
+ * Timer
+ */
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
     static bool flag = true;
@@ -35,7 +38,9 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
     }
     flag = !flag;
 }
-
+/**
+ * Switch 3
+ */
 void __attribute__ ((weak)) SWITCH_3_CallBack(void)
 {
     TMR1_Stop();
@@ -43,7 +48,6 @@ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
     updateStrings("V1:M=4.32;m=1.32V","V1:rms=4.32V    ");
     
 }
-
 
 
 

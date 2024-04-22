@@ -31,6 +31,7 @@
         <itemPath>mcc_generated_files/spi1_driver.h</itemPath>
         <itemPath>mcc_generated_files/delay.h</itemPath>
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
+        <itemPath>mcc_generated_files/sccp1_compare.h</itemPath>
       </logicalFolder>
       <itemPath>pintar_lcd.h</itemPath>
     </logicalFolder>
@@ -75,6 +76,7 @@
         <itemPath>mcc_generated_files/spi1_driver.c</itemPath>
         <itemPath>mcc_generated_files/delay.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
+        <itemPath>mcc_generated_files/sccp1_compare.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>pintar_lcd.c</itemPath>
@@ -256,6 +258,9 @@
       <PKOBSKDEPlatformTool>
         <property key="firmware.download.all" value="false"/>
       </PKOBSKDEPlatformTool>
+      <Tool>
+        <property key="firmware.download.all" value="false"/>
+      </Tool>
     </conf>
   </confs>
 </configurationDescriptor>
