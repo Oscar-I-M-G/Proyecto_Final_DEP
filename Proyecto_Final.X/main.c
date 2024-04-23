@@ -48,7 +48,14 @@ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
     updateStrings("V1:M=4.32;m=1.32V","V1:rms=4.32V    ");
     
 }
-
+/**
+ * Switch 1 utilizar para el test
+ */
+void __attribute__ ((weak)) SWITCH_1_CallBack(void)
+{
+    CCP1RB = 1359; // no necesarimente tengo que indicar el numero hexadecimal
+    GREEN_LED_Toggle();
+}
 
 
 int main(void)

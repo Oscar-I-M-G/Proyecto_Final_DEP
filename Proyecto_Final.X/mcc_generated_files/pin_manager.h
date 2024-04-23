@@ -965,7 +965,7 @@
     The RD7 must be set to an output.
 
   @Returns
- None.
+    None.
 
   @Param
     None.
@@ -1076,6 +1076,152 @@
 
 */
 #define GREEN_LED_SetDigitalOutput() (_TRISD7 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE7, high using LATE7.
+
+  @Description
+    Sets the GPIO pin, RE7, high using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE7 high (1)
+    SWITCH_1_SetHigh();
+    </code>
+
+*/
+#define SWITCH_1_SetHigh()          (_LATE7 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE7, low using LATE7.
+
+  @Description
+    Sets the GPIO pin, RE7, low using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE7 low (0)
+    SWITCH_1_SetLow();
+    </code>
+
+*/
+#define SWITCH_1_SetLow()           (_LATE7 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE7, using LATE7.
+
+  @Description
+    Toggles the GPIO pin, RE7, using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE7
+    SWITCH_1_Toggle();
+    </code>
+
+*/
+#define SWITCH_1_Toggle()           (_LATE7 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE7.
+
+  @Description
+    Reads the value of the GPIO pin, RE7.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE7
+    postValue = SWITCH_1_GetValue();
+    </code>
+
+*/
+#define SWITCH_1_GetValue()         _RE7
+/**
+  @Summary
+    Configures the GPIO pin, RE7, as an input.
+
+  @Description
+    Configures the GPIO pin, RE7, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE7 as an input
+    SWITCH_1_SetDigitalInput();
+    </code>
+
+*/
+#define SWITCH_1_SetDigitalInput()  (_TRISE7 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE7, as an output.
+
+  @Description
+    Configures the GPIO pin, RE7, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE7 as an output
+    SWITCH_1_SetDigitalOutput();
+    </code>
+
+*/
+#define SWITCH_1_SetDigitalOutput() (_TRISE7 = 0)
 /**
   @Summary
     Sets the GPIO pin, RE9, high using LATE9.
@@ -1259,6 +1405,27 @@ void PIN_MANAGER_Initialize (void);
 
 /**
   @Summary
+    Callback for SWITCH_1 Pin.
+
+  @Description
+    This routine is callback for SWITCH_1 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        SWITCH_1_SetInterruptHandler(&SWITCH_1_CallBack);
+    </code>
+*/
+void SWITCH_1_CallBack(void);
+
+/**
+  @Summary
     Callback for SWITCH_3 Pin.
 
   @Description
@@ -1278,6 +1445,46 @@ void PIN_MANAGER_Initialize (void);
 */
 void SWITCH_3_CallBack(void);
 
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_1_SetInterruptHandler(&SWITCH_1_CallBack);
+    </code>
+*/
+void SWITCH_1_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_1_SetIOCInterruptHandler(&SWITCH_1_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_1_SetInterruptHandler instead."))) SWITCH_1_SetIOCInterruptHandler(void *handler);
 
 /**
   @Summary
