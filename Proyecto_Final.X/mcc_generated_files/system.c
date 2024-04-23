@@ -202,16 +202,16 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
+#include "drivers/spi_master.h"
 #include "delay.h"
+#include "spi1_driver.h"
 #include "LCDMiniDrivers/lcd.h"
 #include "LCDMiniDrivers/digipot.h"
 #include "LCDMiniDrivers/expander.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "spi1_driver.h"
-#include "drivers/spi_master.h"
-#include "sccp1_compare.h"
 #include "tmr1.h"
+#include "sccp1_compare.h"
 
 void SYSTEM_Initialize(void)
 {

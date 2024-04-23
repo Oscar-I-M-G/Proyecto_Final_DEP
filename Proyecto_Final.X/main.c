@@ -53,8 +53,9 @@ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
 
 int main(void)
 {
-    contrastScreen();
+    
     SYSTEM_Initialize();
+    contrastScreen();
     clearScreen();
     while (1)
     {

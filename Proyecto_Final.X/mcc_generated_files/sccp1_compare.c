@@ -73,8 +73,8 @@ void SCCP1_COMPARE_Initialize (void)
     CCP1CON1H = 0x00;
     //ASDGM disabled; SSDG disabled; ASDG 0; PWMRSEN disabled; 
     CCP1CON2L = 0x00;
-    //ICGSM Level-Sensitive mode; ICSEL IC1; AUXOUT Disabled; OCAEN disabled; OENSYNC disabled; 
-    CCP1CON2H = 0x00;
+    //ICGSM Level-Sensitive mode; ICSEL IC1; AUXOUT Disabled; OCAEN enabled; OENSYNC enabled; 
+    CCP1CON2H = 0x8100;
     //OETRIG disabled; OSCNT None; POLACE disabled; PSSACE Tri-state; 
     CCP1CON3H = 0x00;
     //ICDIS disabled; SCEVT disabled; TRSET disabled; ICOV disabled; ASEVT disabled; ICGARM disabled; TRCLR disabled; 
