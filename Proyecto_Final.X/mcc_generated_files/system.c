@@ -202,23 +202,27 @@
 #include "clock.h"
 #include "system.h"
 #include "system_types.h"
-#include "drivers/spi_master.h"
-#include "delay.h"
-#include "spi1_driver.h"
 #include "LCDMiniDrivers/lcd.h"
 #include "LCDMiniDrivers/digipot.h"
 #include "LCDMiniDrivers/expander.h"
+#include "tmr1.h"
+#include "adc1.h"
 #include "interrupt_manager.h"
 #include "traps.h"
-#include "tmr1.h"
+#include "delay.h"
+#include "drivers/spi_master.h"
+#include "spi1_driver.h"
+#include "sccp2_compare.h"
 #include "sccp1_compare.h"
 
 void SYSTEM_Initialize(void)
 {
     PIN_MANAGER_Initialize();
-    INTERRUPT_Initialize();
     CLOCK_Initialize();
+    INTERRUPT_Initialize();
     SCCP1_COMPARE_Initialize();
+    SCCP2_COMPARE_Initialize();
+    ADC1_Initialize();
     lcd_setup();
     TMR1_Initialize();
     INTERRUPT_GlobalEnable();

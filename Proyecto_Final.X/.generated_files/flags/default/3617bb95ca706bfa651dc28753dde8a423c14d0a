@@ -1,5 +1,1 @@
-<<<<<<<< HEAD:Proyecto_Final.X/.generated_files/flags/default/3617bb95ca706bfa651dc28753dde8a423c14d0a
  -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/Users/oimg/Documents/trabajosdsPIC/Final_Project/Proyecto_Final.X/mcc_generated_files/delay.c
-========
- -c -mcpu=$(MP_PROCESSOR_OPTION)      -mno-eds-warn  -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"/Users/oimg/Documents/trabajosdsPIC/Final_Project/Proyecto_Final.X/mcc_generated_files/reset.c
->>>>>>>> main:Proyecto_Final.X/.generated_files/flags/default/63e5b9c189628b1c088206a9cb52c9666579684f

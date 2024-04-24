@@ -119,8 +119,8 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_RPCON(0x0000); // unlock PPS
 
-    RPINR20bits.SDI1R = 0x0046;    //RD6->SPI1:SDI1
     RPOR5bits.RP42R = 0x0006;    //RB10->SPI1:SCK1
+    RPINR20bits.SDI1R = 0x0046;    //RD6->SPI1:SDI1
     RPOR9bits.RP51R = 0x0005;    //RC3->SPI1:SDO1
     RPOR6bits.RP45R = 0x000F;    //RB13->SCCP1:OCM1
 

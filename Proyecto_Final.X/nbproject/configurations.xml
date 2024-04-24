@@ -32,6 +32,9 @@
         <itemPath>mcc_generated_files/delay.h</itemPath>
         <itemPath>mcc_generated_files/tmr1.h</itemPath>
         <itemPath>mcc_generated_files/sccp1_compare.h</itemPath>
+        <itemPath>mcc_generated_files/sccp2_compare.h</itemPath>
+        <itemPath>mcc_generated_files/adc1.h</itemPath>
+        <itemPath>mcc_generated_files/adc_module_features.h</itemPath>
       </logicalFolder>
       <itemPath>pintar_lcd.h</itemPath>
     </logicalFolder>
@@ -77,11 +80,17 @@
         <itemPath>mcc_generated_files/delay.c</itemPath>
         <itemPath>mcc_generated_files/tmr1.c</itemPath>
         <itemPath>mcc_generated_files/sccp1_compare.c</itemPath>
+        <itemPath>mcc_generated_files/sccp2_compare.c</itemPath>
+        <itemPath>mcc_generated_files/adc1.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>pintar_lcd.c</itemPath>
+      <itemPath>../../../../Desktop/Codingo Projects/filtroPA.s</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../../Desktop/Codingo Projects</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
@@ -103,6 +112,7 @@
       <compileType>
         <linkerTool>
           <linkerLibItems>
+            <linkerLibFileItem>/Applications/microchip/xc16/v2.10/lib/libdsp-elf.a</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
         <archiverTool>
