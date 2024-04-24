@@ -121,12 +121,12 @@ void __attribute__ ( ( interrupt, no_auto_psv ) ) _CCP2Interrupt ( void )
         IFS1bits.CCP2IF = 0;
     }
 }
-/*
+
 void __attribute__ ((weak)) SCCP2_COMPARE_TimerCallBack(void)
 {
     // Add your custom callback code here
 }
-*/
+
 
 void SCCP2_COMPARE_TimerTasks( void )
 {

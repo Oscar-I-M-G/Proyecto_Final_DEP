@@ -98,6 +98,7 @@ void __attribute__ ((weak)) SWITCH_1_CallBack(void)
  */
 uint16_t conversion = 0;
 uint16_t porcentaje = 14;
+
 void __attribute__ ((weak)) SCCP2_COMPARE_CallBack(void)
 {
     conversion = ADC1_ConversionResultGet(channel_AN0);
