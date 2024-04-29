@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.4.19)  29 APR 2024 12:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.4.19)  29 APR 2024 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -71,10 +71,17 @@ Package graphics Info: Driver file: pdftex.def on input line 107.
 )
 \Gin@req@height=\dimen145
 \Gin@req@width=\dimen146
+) (/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count270
+\float@exts=\toks19
+\float@box=\box53
+\@float@everytoks=\toks20
+\@floatcapt=\box54
 ) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-03-14 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count270
-\l__pdf_internal_box=\box53
+\l__color_backend_stack_int=\count271
+\l__pdf_internal_box=\box55
 ) (documentation.aux)
 \openout1 = `documentation.aux'.
 
@@ -92,20 +99,20 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
 LaTeX Font Info:    ... okay on input line 36.
-\c@lstlisting=\count271
+\c@lstlisting=\count272
  (/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count272
+\scratchcounter=\count273
 \scratchdimen=\dimen147
-\scratchbox=\box54
-\nofMPsegments=\count273
-\nofMParguments=\count274
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count275
+\scratchbox=\box56
+\nofMPsegments=\count274
+\nofMParguments=\count275
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count276
 \MPscratchDim=\dimen148
-\MPnumerator=\count276
-\makeMPintoPDFobject=\count277
-\everyMPtoPDFconversion=\toks20
+\MPnumerator=\count277
+\makeMPintoPDFobject=\count278
+\everyMPtoPDFconversion=\toks22
 ) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -123,8 +130,15 @@ Overfull \hbox (2.33394pt too wide) in paragraph at lines 41--42
 \OT1/cmr/m/n/10 informaci^^Son obtenida de ambas se~nales se muestra en una pantalla LCD. Adem^^Sas,
  []
 
+<images/esquema_og.png, id=1, 1047.915pt x 690.58pt>
+File: images/esquema_og.png Graphic file (type png)
+<use images/esquema_og.png>
+Package pdftex.def Info: images/esquema_og.png  used on input line 58.
+(pdftex.def)             Requested size: 172.5pt x 113.67734pt.
+[1
 
-Overfull \hbox (17.05608pt too wide) in paragraph at lines 63--70
+{/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (17.05608pt too wide) in paragraph at lines 65--71
 []\OT1/cmr/m/n/10 Posteriormente, realizo las medidas de las se~nales, los visualize en un osciloscopio.
  []
 
@@ -132,26 +146,24 @@ Overfull \hbox (17.05608pt too wide) in paragraph at lines 63--70
 File: lstlang1.sty 2024/03/11 1.10a listings language file
 ) (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/03/11 1.10a (Carsten Heinz)
-) [1
-
-{/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}] [2] (documentation.aux)
+) [2 <./images/esquema_og.png>] (documentation.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3124 strings out of 476358
- 47632 string characters out of 5792223
- 1930493 words of memory out of 5000000
- 25238 multiletter control sequences out of 15000+600000
+ 3200 strings out of 476358
+ 48964 string characters out of 5792223
+ 1931493 words of memory out of 5000000
+ 25310 multiletter control sequences out of 15000+600000
  562380 words of font info for 51 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  57i,6n,65p,515b,1223s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on documentation.pdf (2 pages, 86722 bytes).
+Output written on documentation.pdf (2 pages, 440478 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 52 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

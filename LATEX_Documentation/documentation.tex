@@ -1,8 +1,8 @@
 \documentclass{article}
 \usepackage{listings}
 \usepackage{color}
-
-\usepackage{graphicx} % Add this line
+\usepackage{graphicx} 
+\usepackage{float}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -51,17 +51,19 @@ Este proyecto se centra en realizar medidas sobre dos señales que se obtienen a
 \end{itemize}
 
 \section{Procedimiento}
-Empezamos con la creacion de las funciones basicas del dsPIC utilizando un SSCP para una salida PWM, Cumpliendo el con el esquema proporcionado.
+Empezamos con la creacion de las funciones basicas del dsPIC utilizando un SSCP para una salida PWM, Cumpliendo el con el esquema proporcionado (Figura \ref{fig:esquema}).
 
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
-    %%\includegraphics[width=0.5\textwidth]{path/to/your/image} % Replace with the path to your image
-    \caption{Esquema del procedimiento}
+    \includegraphics[width=0.5\textwidth]{images/esquema_og.png} % Replace with the path to your image
+    \caption{Esquema del proyecto}
     \label{fig:esquema}
 \end{figure}
+La salida PWM sale por el RB13 y se conecta con un filtro proporcionado por el profesor.Donde se obtienen las señales senoidal y triangular.
+Una mejora seria la implementacion de manipular el ciclo de trabajo con un modulo ADC. Utilizando un potenciometro para manipular el ciclo de trabajo de la señal PWM.
 
 Posteriormente, realizo las medidas de las señales, los visualize en un osciloscopio. Como se muestra en la Figura \ref{fig:osciloscopio}.
-\begin{figure}[htbp]
+\begin{figure}[H]
     \centering
     %%\includegraphics[width=0.5\textwidth]{path/to/your/image} % Replace with the path to your image
     \caption{Caption of the figure}

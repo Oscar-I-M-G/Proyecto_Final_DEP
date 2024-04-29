@@ -96,16 +96,16 @@ void __attribute__ ((weak)) SWITCH_1_CallBack(void)
 /**
  * Potenciometro controla el duty cycle
  */
-uint16_t conversion = 0;
-uint16_t porcentaje = 14;
+static uint16_t conversion;
+static uint16_t porcentaje;
 
 void __attribute__ ((weak)) SCCP2_COMPARE_CallBack(void)
 {
     conversion = ADC1_ConversionResultGet(channel_AN0);
-    porcentaje = conversion*(1356/4096);
-    if(porcentaje < 14) // 0.01 duty cycle
+    porcentaje = (uint16_t) (conversion * ((float)1355 / 4095)) ;
+    if(porcentaje < 14) // 0.01 duty cycle min
         porcentaje = 14;
-    if(porcentaje > 1342) // 0.99 duty cycle
+    if(porcentaje > 1342) // 0.99 duty cycle max
         porcentaje = 1342;
     CCP1RB = porcentaje;
 }

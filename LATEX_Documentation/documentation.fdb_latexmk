@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1714384908.83624 "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" "documentation.pdf" "documentation" 1714384909.62737 0
+["pdflatex"] 1714392410.66677 "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" "documentation.pdf" "documentation" 1714392412.24872 0
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1713524671.73543 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm" 1713524670.86665 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi12.tfm" 1713524670.8704 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -41,12 +41,14 @@
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty" 1713524673.60766 205152 3812b81ccaa2f3b7199572b45e41280a ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstmisc.sty" 1713524673.59908 77023 48b5adf5086dac991587916788887607 ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstpatch.sty" 1713524673.61048 353 9024412f43e92cd5b21fe9ded82d0610 ""
-  "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" 1714384906.82926 2727 c6f5e8af01acd58a239bd78c6259202a ""
+  "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" 1714392407.98276 3057 6d0a11188aa9c5864470744ffbacf8a5 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1713614540.92134 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1713525610.47022 11548 0b908e57682b3ae85146d673c9bc746c ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1713525605.51028 21058183 55e14a2eedb1b5b20625023c73ba24c8 ""
-  "documentation.aux" 1714384909.49317 986 68e4b6b2a56c0811db78dbc7fb2fc8f8 "pdflatex"
-  "documentation.tex" 1714384906.82926 2727 c6f5e8af01acd58a239bd78c6259202a ""
+  "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty" 1713531616.73316 6916 f35860e0302c70cb81cb70b0a7937693 ""
+  "documentation.aux" 1714392412.0814 981 d174d1812bd1430bf4bb7a18c22dd823 "pdflatex"
+  "documentation.tex" 1714392407.98276 3057 6d0a11188aa9c5864470744ffbacf8a5 ""
+  "images/esquema_og.png" 1714385649.76614 376203 afaa331ab2012abb35757b990dce045c ""
   (generated)
   "documentation.aux"
   "documentation.log"
