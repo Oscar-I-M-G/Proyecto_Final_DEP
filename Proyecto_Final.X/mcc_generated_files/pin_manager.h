@@ -348,6 +348,298 @@
 #define SCK1_SetDigitalOutput() (_TRISB10 = 0)
 /**
   @Summary
+    Sets the GPIO pin, RC1, high using LATC1.
+
+  @Description
+    Sets the GPIO pin, RC1, high using LATC1.
+
+  @Preconditions
+    The RC1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC1 high (1)
+    channel_AN13_SetHigh();
+    </code>
+
+*/
+#define channel_AN13_SetHigh()          (_LATC1 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RC1, low using LATC1.
+
+  @Description
+    Sets the GPIO pin, RC1, low using LATC1.
+
+  @Preconditions
+    The RC1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC1 low (0)
+    channel_AN13_SetLow();
+    </code>
+
+*/
+#define channel_AN13_SetLow()           (_LATC1 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RC1, using LATC1.
+
+  @Description
+    Toggles the GPIO pin, RC1, using LATC1.
+
+  @Preconditions
+    The RC1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RC1
+    channel_AN13_Toggle();
+    </code>
+
+*/
+#define channel_AN13_Toggle()           (_LATC1 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RC1.
+
+  @Description
+    Reads the value of the GPIO pin, RC1.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RC1
+    postValue = channel_AN13_GetValue();
+    </code>
+
+*/
+#define channel_AN13_GetValue()         _RC1
+/**
+  @Summary
+    Configures the GPIO pin, RC1, as an input.
+
+  @Description
+    Configures the GPIO pin, RC1, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC1 as an input
+    channel_AN13_SetDigitalInput();
+    </code>
+
+*/
+#define channel_AN13_SetDigitalInput()  (_TRISC1 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RC1, as an output.
+
+  @Description
+    Configures the GPIO pin, RC1, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC1 as an output
+    channel_AN13_SetDigitalOutput();
+    </code>
+
+*/
+#define channel_AN13_SetDigitalOutput() (_TRISC1 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RC2, high using LATC2.
+
+  @Description
+    Sets the GPIO pin, RC2, high using LATC2.
+
+  @Preconditions
+    The RC2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC2 high (1)
+    channel_AN14_SetHigh();
+    </code>
+
+*/
+#define channel_AN14_SetHigh()          (_LATC2 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RC2, low using LATC2.
+
+  @Description
+    Sets the GPIO pin, RC2, low using LATC2.
+
+  @Preconditions
+    The RC2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC2 low (0)
+    channel_AN14_SetLow();
+    </code>
+
+*/
+#define channel_AN14_SetLow()           (_LATC2 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RC2, using LATC2.
+
+  @Description
+    Toggles the GPIO pin, RC2, using LATC2.
+
+  @Preconditions
+    The RC2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RC2
+    channel_AN14_Toggle();
+    </code>
+
+*/
+#define channel_AN14_Toggle()           (_LATC2 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RC2.
+
+  @Description
+    Reads the value of the GPIO pin, RC2.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RC2
+    postValue = channel_AN14_GetValue();
+    </code>
+
+*/
+#define channel_AN14_GetValue()         _RC2
+/**
+  @Summary
+    Configures the GPIO pin, RC2, as an input.
+
+  @Description
+    Configures the GPIO pin, RC2, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC2 as an input
+    channel_AN14_SetDigitalInput();
+    </code>
+
+*/
+#define channel_AN14_SetDigitalInput()  (_TRISC2 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RC2, as an output.
+
+  @Description
+    Configures the GPIO pin, RC2, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC2 as an output
+    channel_AN14_SetDigitalOutput();
+    </code>
+
+*/
+#define channel_AN14_SetDigitalOutput() (_TRISC2 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RC3, high using LATC3.
 
   @Description

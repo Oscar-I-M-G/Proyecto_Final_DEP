@@ -3,6 +3,15 @@
 \usepackage{color}
 \usepackage{graphicx} 
 \usepackage{float}
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    total={170mm,257mm},
+    left=15mm,
+    right=15mm,
+    top=15mm,
+    bottom=15mm
+}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -41,7 +50,7 @@
 Este proyecto se centra en realizar medidas sobre dos señales que se obtienen al filtrar una señal PWM generada con el dsPIC. Las medidas que se realizan incluyen el valor máximo, el valor medio y el valor eficaz de las señales. La información obtenida de ambas señales se muestra en una pantalla LCD. Además, se crea un filtro digital utilizando la herramienta de MATLAB para procesar las señales.
 \section{Archivos y Directorios}
 \begin{itemize}
-\item \texttt{main.c}: Este es el archivo principal de mi proyecto. Incluye la función 
+\item \texttt{main.c}: Este es el archivo principal de mi proyecto.
 \item \texttt{pintar\_lcd.h}: Este archivo se utiliza para funciones relacionadas con la visualización LCD.
 \end{itemize}
 

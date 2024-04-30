@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1714392410.66677 "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" "documentation.pdf" "documentation" 1714392412.24872 0
+["pdflatex"] 1714393787.66053 "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" "documentation.pdf" "documentation" 1714393789.12418 0
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1713524671.73543 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm" 1713524670.86665 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmmi12.tfm" 1713524670.8704 1524 4414a8315f39513458b80dfc63bff03a ""
@@ -22,6 +22,8 @@
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb" 1713524669.22807 31099 c85edf1dd5b9e826d67c9c7293b6786c ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1713524669.23204 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/context/base/mkii/supp-pdf.mkii" 1713524678.23023 71627 94eb9990bed73c364d7f53f960cc8c5b ""
+  "/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty" 1713524673.17644 7237 bdd120a32c8fdb4b433cf9ca2e7cd98a ""
+  "/Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty" 1713524673.17673 1057 525c2192b5febbd8c1f662c9468335bb ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/00miktex/epstopdf-sys.cfg" 1713524677.85598 584 2a1075dd71571459f59146da9f7502ad ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls" 1713524676.08483 20144 147463a6a579f4597269ef9565205cfe ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/size10.clo" 1713524676.07507 8448 dbc0dbf4156c0bb9ba01a1c685d3bad0 ""
@@ -41,13 +43,15 @@
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty" 1713524673.60766 205152 3812b81ccaa2f3b7199572b45e41280a ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstmisc.sty" 1713524673.59908 77023 48b5adf5086dac991587916788887607 ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstpatch.sty" 1713524673.61048 353 9024412f43e92cd5b21fe9ded82d0610 ""
-  "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" 1714392407.98276 3057 6d0a11188aa9c5864470744ffbacf8a5 ""
+  "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" 1714393785.01825 3170 d6aac3d7d52d72f85fd966d6dc02f6e7 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1713614540.92134 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1713525610.47022 11548 0b908e57682b3ae85146d673c9bc746c ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1713525605.51028 21058183 55e14a2eedb1b5b20625023c73ba24c8 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty" 1713531616.73316 6916 f35860e0302c70cb81cb70b0a7937693 ""
-  "documentation.aux" 1714392412.0814 981 d174d1812bd1430bf4bb7a18c22dd823 "pdflatex"
-  "documentation.tex" 1714392407.98276 3057 6d0a11188aa9c5864470744ffbacf8a5 ""
+  "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg" 1713529391.45224 1104 d237cad3f14be9fd91fe1f904d051a01 ""
+  "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty" 1713529391.45266 42759 e63af52ccddba7489ac0e17d6a3344bd ""
+  "documentation.aux" 1714393788.98149 981 f7fb6efb573c776cd834d71b67666979 "pdflatex"
+  "documentation.tex" 1714393785.01825 3170 d6aac3d7d52d72f85fd966d6dc02f6e7 ""
   "images/esquema_og.png" 1714385649.76614 376203 afaa331ab2012abb35757b990dce045c ""
   (generated)
   "documentation.aux"

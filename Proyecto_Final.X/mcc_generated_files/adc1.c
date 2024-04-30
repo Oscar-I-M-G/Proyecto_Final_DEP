@@ -54,6 +54,8 @@
 
 static void (*ADC1_CommonDefaultInterruptHandler)(void);
 static void (*ADC1_channel_AN0DefaultInterruptHandler)(uint16_t adcVal);
+static void (*ADC1_channel_AN13DefaultInterruptHandler)(uint16_t adcVal);
+static void (*ADC1_channel_AN14DefaultInterruptHandler)(uint16_t adcVal);
 static void (*ADC1_channel_AN16DefaultInterruptHandler)(uint16_t adcVal);
 static void (*ADC1_channel_AN17DefaultInterruptHandler)(uint16_t adcVal);
 static void (*ADC1_channel_AN18DefaultInterruptHandler)(uint16_t adcVal);
@@ -150,6 +152,8 @@ void ADC1_Initialize (void)
     //Assign Default Callbacks
     ADC1_SetCommonInterruptHandler(&ADC1_CallBack);
     ADC1_Setchannel_AN0InterruptHandler(&ADC1_channel_AN0_CallBack);
+    ADC1_Setchannel_AN13InterruptHandler(&ADC1_channel_AN13_CallBack);
+    ADC1_Setchannel_AN14InterruptHandler(&ADC1_channel_AN14_CallBack);
     ADC1_Setchannel_AN16InterruptHandler(&ADC1_channel_AN16_CallBack);
     ADC1_Setchannel_AN17InterruptHandler(&ADC1_channel_AN17_CallBack);
     ADC1_Setchannel_AN18InterruptHandler(&ADC1_channel_AN18_CallBack);
@@ -196,10 +200,10 @@ void ADC1_Initialize (void)
     ADTRIG2L = 0x00;
     //TRGSRC11 None; TRGSRC10 None; 
     ADTRIG2H = 0x00;
-    //TRGSRC13 None; TRGSRC12 None; 
-    ADTRIG3L = 0x00;
-    //TRGSRC15 None; TRGSRC14 None; 
-    ADTRIG3H = 0x00;
+    //TRGSRC13 Master SCCP3 PWM Interrupt; TRGSRC12 None; 
+    ADTRIG3L = 0x1600;
+    //TRGSRC15 None; TRGSRC14 Master SCCP3 PWM Interrupt; 
+    ADTRIG3H = 0x16;
     //TRGSRC17 Common Software Trigger; TRGSRC16 Common Software Trigger; 
     ADTRIG4L = 0x101;
     //TRGSRC19 Common Software Trigger; TRGSRC18 Common Software Trigger; 
@@ -262,6 +266,58 @@ void __attribute__ ((weak)) ADC1_channel_AN0_Tasks ( void )
         if(ADC1_channel_AN0DefaultInterruptHandler) 
         { 
             ADC1_channel_AN0DefaultInterruptHandler(valchannel_AN0); 
+        }
+    }
+}
+
+void __attribute__ ((weak)) ADC1_channel_AN13_CallBack( uint16_t adcVal )
+{ 
+
+}
+
+void ADC1_Setchannel_AN13InterruptHandler(void* handler)
+{
+    ADC1_channel_AN13DefaultInterruptHandler = handler;
+}
+
+void __attribute__ ((weak)) ADC1_channel_AN13_Tasks ( void )
+{
+    uint16_t valchannel_AN13;
+
+    if(ADSTATLbits.AN13RDY)
+    {
+        //Read the ADC value from the ADCBUF
+        valchannel_AN13 = ADCBUF13;
+
+        if(ADC1_channel_AN13DefaultInterruptHandler) 
+        { 
+            ADC1_channel_AN13DefaultInterruptHandler(valchannel_AN13); 
+        }
+    }
+}
+
+void __attribute__ ((weak)) ADC1_channel_AN14_CallBack( uint16_t adcVal )
+{ 
+
+}
+
+void ADC1_Setchannel_AN14InterruptHandler(void* handler)
+{
+    ADC1_channel_AN14DefaultInterruptHandler = handler;
+}
+
+void __attribute__ ((weak)) ADC1_channel_AN14_Tasks ( void )
+{
+    uint16_t valchannel_AN14;
+
+    if(ADSTATLbits.AN14RDY)
+    {
+        //Read the ADC value from the ADCBUF
+        valchannel_AN14 = ADCBUF14;
+
+        if(ADC1_channel_AN14DefaultInterruptHandler) 
+        { 
+            ADC1_channel_AN14DefaultInterruptHandler(valchannel_AN14); 
         }
     }
 }

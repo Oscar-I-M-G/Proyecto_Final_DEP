@@ -61,6 +61,9 @@ void INTERRUPT_Initialize (void)
     //    CCTI: CCP1 Timer Event
     //    Priority: 1
         IPC1bits.CCT1IP = 1;
+    //    CCPI: CCP3 Capture/Compare Event
+    //    Priority: 1
+        IPC8bits.CCP3IP = 1;
     //    CNEI: Change Notification E
     //    Priority: 1
         IPC19bits.CNEIP = 1;

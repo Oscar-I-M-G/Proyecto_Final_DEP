@@ -42,6 +42,15 @@ INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/graphics-cfg/graphics.cfg
 INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty
 INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/float/float.sty
+INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
+INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/ifvtex.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
+INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/generic/iftex/iftex.sty
+INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
+INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 INPUT ./documentation.aux
@@ -78,7 +87,6 @@ OUTPUT documentation.pdf
 INPUT ./images/esquema_og.png
 INPUT ./images/esquema_og.png
 INPUT ./images/esquema_og.png
-INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
@@ -86,6 +94,7 @@ INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstm
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstmisc.sty
 INPUT /Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstmisc.sty
 INPUT /Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmtt8.tfm
+INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map
 INPUT documentation.aux
 INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk
 INPUT /Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk

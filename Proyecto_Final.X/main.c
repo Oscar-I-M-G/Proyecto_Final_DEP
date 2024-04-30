@@ -8,6 +8,7 @@
 /**
   Section: Included Files
 */
+
 #include "mcc_generated_files/system.h"
 #include "pintar_lcd.h"
 #include "mcc_generated_files/pin_manager.h"
@@ -16,6 +17,8 @@
 #include "dsp.h"
 #include "math.h"
 #include "mcc_generated_files/adc1.h"
+#include "funciones.h"
+
 /*#define NUM_SAMPLES 256 //Pontencia de 2 el numero de muestras
 
 fractional entrada[NUM_SAMPLES]; //Buffer entrada
@@ -63,7 +66,8 @@ void generaonda(void)
  */
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
-    static bool flag = true;
+    /*
+  *     static bool flag = true;
     // MENU cambio cada 3 segundos
     if (flag){
         updateStrings("Presiona        ","SWITCH1         ");
@@ -73,16 +77,18 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
         updateStrings("MUESTREO PWM    ","OSCAR I.M.G.    ");
         
     }
-    flag = !flag;
+    flag = !flag; 
+  */
+    GREEN_LED_Toggle();
 }
 /**
  * Switch 3
  */
 void __attribute__ ((weak)) SWITCH_3_CallBack(void)
 {
-    TMR1_Stop();
+    //TMR1_Stop();
     GREEN_LED_Toggle();
-    updateStrings("V1:M=4.32;m=1.32V","V1:rms=4.32V    ");
+    //updateStrings("V1:M=4.32;m=1.32V","V1:rms=4.32V    ");
     
 }
 /**
@@ -90,7 +96,7 @@ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
  */
 void __attribute__ ((weak)) SWITCH_1_CallBack(void)
 {
-    CCP1RB = 600; // no necesarimente tengo que indicar el numero hexadecimal //cambiar el prescaler
+    //CCP1RB = 600; // no necesarimente tengo que indicar el numero hexadecimal //cambiar el prescaler
     GREEN_LED_Toggle();
 }
 /**
@@ -108,6 +114,29 @@ void __attribute__ ((weak)) SCCP2_COMPARE_CallBack(void)
     if(porcentaje > 1342) // 0.99 duty cycle max
         porcentaje = 1342;
     CCP1RB = porcentaje;
+}
+
+uint16_t buffer1[256];
+uint16_t buffer2[256];
+uint8_t moving=0;
+float rms_value_1 = 0;
+float rms_value_2 = 0;
+
+
+void __attribute__ ((weak)) SCCP3_COMPARE_CallBack(void)
+{
+    
+    buffer1[moving] = ADC1_ConversionResultGet(channel_AN13);
+    buffer2[moving] = ADC1_ConversionResultGet(channel_AN14);
+    if (moving >= 255){
+        moving = 0;
+        //rms
+        rms_value_1 = calculate_rms(buffer1,256) ;
+        rms_value_2 = calculate_rms(buffer2,256);
+        
+    }else{
+        moving++;
+    }
 }
 
 int main(void)
