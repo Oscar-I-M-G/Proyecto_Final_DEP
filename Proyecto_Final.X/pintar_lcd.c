@@ -7,8 +7,8 @@
 #define ROW_LENGTH 16
 
 // Inicializacion 
-static uint8_t row0_display[ROW_LENGTH] = "MUESTREO PWM";
-static uint8_t row1_display[ROW_LENGTH] = "OSCAR I.M.G.";
+static uint8_t row0_display[ROW_LENGTH] = "MUESTREO PWM    ";
+static uint8_t row1_display[ROW_LENGTH] = "OSCAR I.M.G.    ";
 
 static uint8_t* Prow0 = &row0_display;
 static uint8_t* Prow1 = &row1_display;
@@ -20,7 +20,7 @@ void drawScreen(){
     lcd_writeString(Prow1, 1);
     lcd_writeString(Prow0, 0);
 }
-void updateStrings(char string1[16],char string2[16]){
+void updateStrings(char string1[ROW_LENGTH],char string2[ROW_LENGTH]){
     sprintf(row0,string1);
     sprintf(row1,string2);
     Prow0 = (uint8_t*) &row0;

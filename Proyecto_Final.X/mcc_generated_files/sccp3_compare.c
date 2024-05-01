@@ -83,14 +83,14 @@ void SCCP3_COMPARE_Initialize (void)
     CCP3TMRL = 0x00;
     //TMR 0; 
     CCP3TMRH = 0x00;
-    //PR 1808; 
-    CCP3PRL = 0x710;
+    //PR 677; 
+    CCP3PRL = 0x2A5;
     //PR 0; 
     CCP3PRH = 0x00;
     //CMP 0; 
     CCP3RA = 0x00;
-    //CMP 904; 
-    CCP3RB = 0x388;
+    //CMP 338; 
+    CCP3RB = 0x152;
     //BUF 0; 
     CCP3BUFL = 0x00;
     //BUF 0; 
@@ -105,12 +105,12 @@ void SCCP3_COMPARE_Initialize (void)
     IEC2bits.CCP3IE = 1;
 
 }
-
+/**
 void __attribute__ ((weak)) SCCP3_COMPARE_CallBack(void)
 {
     // Add your custom callback code here
 }
-
+*/
 void __attribute__ ( ( interrupt, no_auto_psv ) ) _CCP3Interrupt ( void )
 {
     if(IFS2bits.CCP3IF)

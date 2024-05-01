@@ -18,18 +18,33 @@
 #include "math.h"
 #include "mcc_generated_files/adc1.h"
 #include "funciones.h"
+#define NUM_SAMPLES 32 //maximo 256 buffer samples
 
-/*#define NUM_SAMPLES 256 //Pontencia de 2 el numero de muestras
+// Variables importantes
+uint16_t buffer1[NUM_SAMPLES];
+uint16_t buffer2[NUM_SAMPLES];
+uint8_t buffer_move=0;
+uint8_t max_min_move =0;
+float rms_value_1 = 0;
+float rms_value_2 = 0;
+uint16_t max_1[NUM_SAMPLES];
+uint16_t max_2[NUM_SAMPLES];
+uint16_t min_1[NUM_SAMPLES];
+uint16_t min_2[NUM_SAMPLES];
+float max_average_1=0.0;
+float min_average_1=0.0;
+float max_average_2=0.0;
+float min_average_2=0.0;
+float temp1 = 0.0;
+float temp2 = 0.0;
 
+/*
 fractional entrada[NUM_SAMPLES]; //Buffer entrada
 fractional filtrada[NUM_SAMPLES]; //Buffer salida
-
-
 uint16_t fsample, freca, frecb, frecc;
 float sinA[NUM_SAMPLES];
 float sinB[NUM_SAMPLES];
 float sinC[NUM_SAMPLES];
-
 uint16_t apr =1;
 void generaonda(void)
 {
@@ -64,21 +79,44 @@ void generaonda(void)
 /**
  * Timer
  */
+char string1[16];
+char string2[16];
+bool flag_measurements = false;
+bool flag_signal = false; // falso para señal 1 verdadero para señal 2
 void __attribute__ ((weak)) TMR1_CallBack(void)
 {
-    /*
-  *     static bool flag = true;
+    static bool flag_menu = true;
+
     // MENU cambio cada 3 segundos
-    if (flag){
-        updateStrings("Presiona        ","SWITCH1         ");
+    if(!flag_measurements){
+        if (flag_menu){
+            updateStrings("Presiona        ","SWITCH1         ");
         
-    }
-    else{
-        updateStrings("MUESTREO PWM    ","OSCAR I.M.G.    ");
+        }
+        else{
+            updateStrings("MUESTREO PWM    ","OSCAR I.M.G.    ");
         
+        }
+        flag_menu = !flag_menu; 
+    }else{
+        if (flag_signal){
+            temp1 = max_average_1 * (3.3/4096);
+            temp2 = min_average_1 * (3.3/4096);
+            sprintf(string1,"V1:M=%.2f;m=%.2f",temp1,temp2);
+            temp1 = rms_value_1 * (3.3/4096);
+            sprintf(string2,"RMS:%.2f        ",temp1);
+
+        }else{
+            temp1 = max_average_2 * (3.3/4096);
+            temp2 = min_average_2 * (3.3/4096);
+            sprintf(string1,"V2:M=%.2f;m=%.2f",temp1,temp2);
+            temp1 = rms_value_2 * (3.3/4096);
+            sprintf(string2,"RMS:%.2f        ",temp1);
+        }
+
+        updateStrings(string1,string2);
     }
-    flag = !flag; 
-  */
+
     GREEN_LED_Toggle();
 }
 /**
@@ -88,7 +126,7 @@ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
 {
     //TMR1_Stop();
     GREEN_LED_Toggle();
-    //updateStrings("V1:M=4.32;m=1.32V","V1:rms=4.32V    ");
+    flag_measurements=true; //activamos la vizualizacion de las medidas
     
 }
 /**
@@ -98,6 +136,7 @@ void __attribute__ ((weak)) SWITCH_1_CallBack(void)
 {
     //CCP1RB = 600; // no necesarimente tengo que indicar el numero hexadecimal //cambiar el prescaler
     GREEN_LED_Toggle();
+    flag_signal = !flag_signal;
 }
 /**
  * Potenciometro controla el duty cycle
@@ -116,26 +155,34 @@ void __attribute__ ((weak)) SCCP2_COMPARE_CallBack(void)
     CCP1RB = porcentaje;
 }
 
-uint16_t buffer1[256];
-uint16_t buffer2[256];
-uint8_t moving=0;
-float rms_value_1 = 0;
-float rms_value_2 = 0;
-
 
 void __attribute__ ((weak)) SCCP3_COMPARE_CallBack(void)
 {
     
-    buffer1[moving] = ADC1_ConversionResultGet(channel_AN13);
-    buffer2[moving] = ADC1_ConversionResultGet(channel_AN14);
-    if (moving >= 255){
-        moving = 0;
+    buffer1[buffer_move] = ADC1_ConversionResultGet(channel_AN13);
+    buffer2[buffer_move] = ADC1_ConversionResultGet(channel_AN14);
+    if (buffer_move >= NUM_SAMPLES){
+        buffer_move = 0;
         //rms
-        rms_value_1 = calculate_rms(buffer1,256) ;
-        rms_value_2 = calculate_rms(buffer2,256);
+        rms_value_1 = calculate_rms(buffer1,NUM_SAMPLES);
+        rms_value_2 = calculate_rms(buffer2,NUM_SAMPLES);
         
+        max_1[max_min_move] = calculate_max_voltage(buffer1,NUM_SAMPLES);
+        min_1[max_min_move] = calculate_min_voltage(buffer1,NUM_SAMPLES); 
+        max_2[max_min_move] = calculate_max_voltage(buffer2,NUM_SAMPLES);
+        min_2[max_min_move] = calculate_min_voltage(buffer2,NUM_SAMPLES);
+        if(max_min_move >= NUM_SAMPLES){
+
+            max_average_1 = calculate_average(max_1,NUM_SAMPLES);
+            min_average_1 = calculate_average(min_1,NUM_SAMPLES);           
+            max_average_2 = calculate_average(max_2,NUM_SAMPLES);
+            min_average_2 = calculate_average(min_2,NUM_SAMPLES);
+            max_min_move = 0;
+        }else{
+            max_min_move ++;
+        }
     }else{
-        moving++;
+        buffer_move++;
     }
 }
 

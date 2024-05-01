@@ -9,7 +9,9 @@
 #define	FUNCIONES_H
 
 float calculate_rms(int* samples, int num_samples);
-
+uint16_t calculate_max_voltage(uint16_t* samples,uint8_t num_samples);
+uint16_t calculate_min_voltage(uint16_t* samples,uint8_t num_samples);
+float calculate_average(uint16_t* samples,uint8_t num_samples);
 #ifdef	__cplusplus
 extern "C" {
 #endif
