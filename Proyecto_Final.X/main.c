@@ -42,17 +42,6 @@ float min_average_2=0.0;
 float temp1 = 0.0;
 float temp2 = 0.0;
 
-
-/*
-  void filtrar (void){
-    extern FIRStruct PasaBandaFilter; //Filtro creado en archivo .s checar el archivooooooo ahi viene al final
-    FIRDelayInit (&PasaBandaFilter); //Inicializamos el Filtro
-    FIR(NUM_SAMPLES, &filtrada[0], &entrada[0], &PasaBandaFilter);
-    return;
-}
- */
-
-
  void aplicarFiltroFIR (fractional* buffer,fractional* output){
     extern FIRStruct PasaBandaFilter; //Filtro creado en archivo .s checar el archivooooooo ahi viene al final
     FIRDelayInit (&PasaBandaFilter); //Inicializamos el Filtro
@@ -91,14 +80,14 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
             temp1 = max_average_1 * ((float)3.3/4096);
             temp2 = min_average_1 * ((float)3.3/4096);
             sprintf(string1,"V1:M=%.2f;m=%.2f",temp1,temp2);
-            temp1 = rms_value_1 * (3.3/4096);
+            temp1 = rms_value_1 * ((float)3.3/4096);
             sprintf(string2,"RMS:%.2f        ",temp1);
 
         }else{
-            temp1 = max_average_2 * (3.3/4096);
-            temp2 = min_average_2 * (3.3/4096);
+            temp1 = max_average_2 * ((float)3.3/4096);
+            temp2 = min_average_2 * ((float)3.3/4096);
             sprintf(string1,"V2:M=%.2f;m=%.2f",temp1,temp2);
-            temp1 = rms_value_2 * (3.3/4096);
+            temp1 = rms_value_2 * ((float)3.3/4096);
             sprintf(string2,"RMS:%.2f        ",temp1);
         }
 
@@ -107,6 +96,8 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
 
     GREEN_LED_Toggle();
 }
+
+
 /**
  * Switch 3
  */
@@ -151,7 +142,12 @@ void __attribute__ ((weak)) SCCP3_COMPARE_CallBack(void)
     buffer2[buffer_move] = ADC1_ConversionResultGet(channel_AN14);
     buffer2_frac[buffer_move] = buffer2[buffer_move]*0x8000;
     if (buffer_move >= NUM_SAMPLES){
+        // Aplicacion del filtro FIR
+        //if(FILTER_FLAG == 0)
         aplicarFiltroFIR(buffer1_frac,buffer1_filter);
+        aplicarFiltroFIR(buffer2_frac,buffer2_filter);
+        
+        
         
         rms_value_1 = calculate_rms(buffer1,NUM_SAMPLES);
         rms_value_2 = calculate_rms(buffer2,NUM_SAMPLES);
