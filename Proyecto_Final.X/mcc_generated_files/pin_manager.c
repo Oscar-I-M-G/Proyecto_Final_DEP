@@ -58,6 +58,7 @@
 */
 void (*SWITCH_1_InterruptHandler)(void) = NULL;
 void (*SWITCH_3_InterruptHandler)(void) = NULL;
+void (*SWITCH_2_InterruptHandler)(void) = NULL;
 
 /**
  Section: Driver Interface Function Definitions
@@ -119,8 +120,8 @@ void PIN_MANAGER_Initialize (void)
      ***************************************************************************/
     __builtin_write_RPCON(0x0000); // unlock PPS
 
-    RPINR20bits.SDI1R = 0x0046;    //RD6->SPI1:SDI1
     RPOR6bits.RP45R = 0x000F;    //RB13->SCCP1:OCM1
+    RPINR20bits.SDI1R = 0x0046;    //RD6->SPI1:SDI1
     RPOR9bits.RP51R = 0x0005;    //RC3->SPI1:SDO1
     RPOR5bits.RP42R = 0x0006;    //RB10->SPI1:SCK1
 
@@ -130,11 +131,13 @@ void PIN_MANAGER_Initialize (void)
      * Interrupt On Change: negative
      ***************************************************************************/
     CNEN1Ebits.CNEN1E7 = 1;    //Pin : RE7
+    CNEN1Ebits.CNEN1E8 = 1;    //Pin : RE8
     CNEN1Ebits.CNEN1E9 = 1;    //Pin : RE9
     /****************************************************************************
      * Interrupt On Change: flag
      ***************************************************************************/
     CNFEbits.CNFE7 = 0;    //Pin : RE7
+    CNFEbits.CNFE8 = 0;    //Pin : RE8
     CNFEbits.CNFE9 = 0;    //Pin : RE9
     /****************************************************************************
      * Interrupt On Change: config
@@ -145,6 +148,7 @@ void PIN_MANAGER_Initialize (void)
     /* Initialize IOC Interrupt Handler*/
     SWITCH_1_SetInterruptHandler(&SWITCH_1_CallBack);
     SWITCH_3_SetInterruptHandler(&SWITCH_3_CallBack);
+    SWITCH_2_SetInterruptHandler(&SWITCH_2_CallBack);
     
     /****************************************************************************
      * Interrupt On Change: Interrupt Enable
@@ -152,6 +156,7 @@ void PIN_MANAGER_Initialize (void)
     IFS4bits.CNEIF = 0; //Clear CNEI interrupt flag
     IEC4bits.CNEIE = 1; //Enable CNEI interrupt
 }
+
 /*
 void __attribute__ ((weak)) SWITCH_1_CallBack(void)
 {
@@ -159,6 +164,11 @@ void __attribute__ ((weak)) SWITCH_1_CallBack(void)
 }
 
 void __attribute__ ((weak)) SWITCH_3_CallBack(void)
+{
+
+}
+
+void __attribute__ ((weak)) SWITCH_2_CallBack(void)
 {
 
 }
@@ -187,6 +197,18 @@ void SWITCH_3_SetIOCInterruptHandler(void *handler)
     SWITCH_3_SetInterruptHandler(handler);
 }
 
+void SWITCH_2_SetInterruptHandler(void (* InterruptHandler)(void))
+{ 
+    IEC4bits.CNEIE = 0; //Disable CNEI interrupt
+    SWITCH_2_InterruptHandler = InterruptHandler; 
+    IEC4bits.CNEIE = 1; //Enable CNEI interrupt
+}
+
+void SWITCH_2_SetIOCInterruptHandler(void *handler)
+{ 
+    SWITCH_2_SetInterruptHandler(handler);
+}
+
 /* Interrupt service routine for the CNEI interrupt. */
 void __attribute__ (( interrupt, no_auto_psv )) _CNEInterrupt ( void )
 {
@@ -211,6 +233,17 @@ void __attribute__ (( interrupt, no_auto_psv )) _CNEInterrupt ( void )
             }
             
             CNFEbits.CNFE9 = 0;  //Clear flag for Pin - RE9
+
+        }
+        
+        if(CNFEbits.CNFE8 == 1)
+        {
+            if(SWITCH_2_InterruptHandler) 
+            { 
+                SWITCH_2_InterruptHandler(); 
+            }
+            
+            CNFEbits.CNFE8 = 0;  //Clear flag for Pin - RE8
 
         }
         

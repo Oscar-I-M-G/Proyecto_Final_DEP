@@ -1662,6 +1662,152 @@
 #define SWITCH_1_SetDigitalOutput() (_TRISE7 = 0)
 /**
   @Summary
+    Sets the GPIO pin, RE8, high using LATE8.
+
+  @Description
+    Sets the GPIO pin, RE8, high using LATE8.
+
+  @Preconditions
+    The RE8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE8 high (1)
+    SWITCH_2_SetHigh();
+    </code>
+
+*/
+#define SWITCH_2_SetHigh()          (_LATE8 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE8, low using LATE8.
+
+  @Description
+    Sets the GPIO pin, RE8, low using LATE8.
+
+  @Preconditions
+    The RE8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE8 low (0)
+    SWITCH_2_SetLow();
+    </code>
+
+*/
+#define SWITCH_2_SetLow()           (_LATE8 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE8, using LATE8.
+
+  @Description
+    Toggles the GPIO pin, RE8, using LATE8.
+
+  @Preconditions
+    The RE8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE8
+    SWITCH_2_Toggle();
+    </code>
+
+*/
+#define SWITCH_2_Toggle()           (_LATE8 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE8.
+
+  @Description
+    Reads the value of the GPIO pin, RE8.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE8
+    postValue = SWITCH_2_GetValue();
+    </code>
+
+*/
+#define SWITCH_2_GetValue()         _RE8
+/**
+  @Summary
+    Configures the GPIO pin, RE8, as an input.
+
+  @Description
+    Configures the GPIO pin, RE8, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE8 as an input
+    SWITCH_2_SetDigitalInput();
+    </code>
+
+*/
+#define SWITCH_2_SetDigitalInput()  (_TRISE8 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE8, as an output.
+
+  @Description
+    Configures the GPIO pin, RE8, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE8 as an output
+    SWITCH_2_SetDigitalOutput();
+    </code>
+
+*/
+#define SWITCH_2_SetDigitalOutput() (_TRISE8 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RE9, high using LATE9.
 
   @Description
@@ -1883,6 +2029,27 @@ void SWITCH_1_CallBack(void);
 */
 void SWITCH_3_CallBack(void);
 
+/**
+  @Summary
+    Callback for SWITCH_2 Pin.
+
+  @Description
+    This routine is callback for SWITCH_2 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        SWITCH_2_SetInterruptHandler(&SWITCH_2_CallBack);
+    </code>
+*/
+void SWITCH_2_CallBack(void);
+
 
 /**
   @Summary
@@ -1963,6 +2130,46 @@ void SWITCH_3_SetInterruptHandler(void (* InterruptHandler)(void));
     </code>
 */
 void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_3_SetInterruptHandler instead."))) SWITCH_3_SetIOCInterruptHandler(void *handler);
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_2_SetInterruptHandler(&SWITCH_2_CallBack);
+    </code>
+*/
+void SWITCH_2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_2_SetIOCInterruptHandler(&SWITCH_2_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_2_SetInterruptHandler instead."))) SWITCH_2_SetIOCInterruptHandler(void *handler);
 
 
 #endif
