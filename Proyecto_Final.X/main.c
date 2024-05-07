@@ -18,11 +18,15 @@
 #include "math.h"
 #include "mcc_generated_files/adc1.h"
 #include "funciones.h"
-#define NUM_SAMPLES 32 //maximo 256 buffer samples
+#define NUM_SAMPLES 128 //maximo 256 buffer samples entre mas alto mas lento 
 
 // Variables importantes
 uint16_t buffer1[NUM_SAMPLES];
+fractional buffer1_frac[NUM_SAMPLES];
+fractional buffer1_filter[NUM_SAMPLES];
 uint16_t buffer2[NUM_SAMPLES];
+fractional buffer2_frac[NUM_SAMPLES];
+fractional buffer2_filter[NUM_SAMPLES];
 uint8_t buffer_move=0;
 uint8_t max_min_move =0;
 float rms_value_1 = 0;
@@ -38,41 +42,25 @@ float min_average_2=0.0;
 float temp1 = 0.0;
 float temp2 = 0.0;
 
+
 /*
-fractional entrada[NUM_SAMPLES]; //Buffer entrada
-fractional filtrada[NUM_SAMPLES]; //Buffer salida
-uint16_t fsample, freca, frecb, frecc;
-float sinA[NUM_SAMPLES];
-float sinB[NUM_SAMPLES];
-float sinC[NUM_SAMPLES];
-uint16_t apr =1;
-void generaonda(void)
-{
-    uint16_t n = 0;
+  void filtrar (void){
+    extern FIRStruct PasaBandaFilter; //Filtro creado en archivo .s checar el archivooooooo ahi viene al final
+    FIRDelayInit (&PasaBandaFilter); //Inicializamos el Filtro
+    FIR(NUM_SAMPLES, &filtrada[0], &entrada[0], &PasaBandaFilter);
+    return;
+}
+ */
+
+
+ void aplicarFiltroFIR (fractional* buffer,fractional* output){
+    extern FIRStruct PasaBandaFilter; //Filtro creado en archivo .s checar el archivooooooo ahi viene al final
+    FIRDelayInit (&PasaBandaFilter); //Inicializamos el Filtro
+    
+    FIR(NUM_SAMPLES, &output[0], &buffer[0], &PasaBandaFilter);
+    return; 
+ }
  
-    fsample = 10000;    // Frecuencia de Muestreo de 10 KHz
-    freca   = 	847;    // Senoide de 847 Hz 
-    frecb	=	367;    // Senoide de 367 Hz
-    frecc 	= 	123;    // Senoide de 123 Hz
-    for (n=0; n < NUM_SAMPLES; n++)
-    {
-      sinA[n] = sin((2*PI*freca*n)/fsample);            // Creamos una senoide por puntos de la frecuencia A
-      sinB[n] = sin((2*PI*frecb*n)/fsample);            // Creamos una senoide por puntos de la frecuencia B
-      sinC[n] = sin((2*PI*frecc*n)/fsample);            // Creamos una senoide por puntos de la frecuencia C
-      entrada[n] = ((sinA[n]+sinB[n]+sinC[n])/3)*0x8000;  // Escalamos el flotante a fraccional
-     
-    }
-    return;
-}
-
- void filtrar (void){
-    extern FIRStruct filtroPAFilter; //Filtro creado en archivo .s checar el archivooooooo ahi viene al final
-    FIRDelayInit (&filtroPAFilter); //Inicializamos el Filtro
-    FIR(NUM_SAMPLES, &filtrada[0], &entrada[0], &filtroPAFilter);
-    return;
-}
-*/
-
 /**
  * CALLBACKS
  */
@@ -90,7 +78,7 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
     // MENU cambio cada 3 segundos
     if(!flag_measurements){
         if (flag_menu){
-            updateStrings("Presiona        ","SWITCH1         ");
+            updateStrings("Presiona        ","SWITCH3         ");
         
         }
         else{
@@ -100,8 +88,8 @@ void __attribute__ ((weak)) TMR1_CallBack(void)
         flag_menu = !flag_menu; 
     }else{
         if (flag_signal){
-            temp1 = max_average_1 * (3.3/4096);
-            temp2 = min_average_1 * (3.3/4096);
+            temp1 = max_average_1 * ((float)3.3/4096);
+            temp2 = min_average_1 * ((float)3.3/4096);
             sprintf(string1,"V1:M=%.2f;m=%.2f",temp1,temp2);
             temp1 = rms_value_1 * (3.3/4096);
             sprintf(string2,"RMS:%.2f        ",temp1);
@@ -130,11 +118,10 @@ void __attribute__ ((weak)) SWITCH_3_CallBack(void)
     
 }
 /**
- * Switch 1 utilizar para el test
+ * Switch 1 para cambiar la señal medida
  */
 void __attribute__ ((weak)) SWITCH_1_CallBack(void)
 {
-    //CCP1RB = 600; // no necesarimente tengo que indicar el numero hexadecimal //cambiar el prescaler
     GREEN_LED_Toggle();
     flag_signal = !flag_signal;
 }
@@ -160,23 +147,24 @@ void __attribute__ ((weak)) SCCP3_COMPARE_CallBack(void)
 {
     
     buffer1[buffer_move] = ADC1_ConversionResultGet(channel_AN13);
+    buffer1_frac[buffer_move] = buffer1[buffer_move]*0x8000;
     buffer2[buffer_move] = ADC1_ConversionResultGet(channel_AN14);
+    buffer2_frac[buffer_move] = buffer2[buffer_move]*0x8000;
     if (buffer_move >= NUM_SAMPLES){
-        buffer_move = 0;
-        //rms
+        aplicarFiltroFIR(buffer1_frac,buffer1_filter);
+        
         rms_value_1 = calculate_rms(buffer1,NUM_SAMPLES);
         rms_value_2 = calculate_rms(buffer2,NUM_SAMPLES);
-        
         max_1[max_min_move] = calculate_max_voltage(buffer1,NUM_SAMPLES);
         min_1[max_min_move] = calculate_min_voltage(buffer1,NUM_SAMPLES); 
         max_2[max_min_move] = calculate_max_voltage(buffer2,NUM_SAMPLES);
         min_2[max_min_move] = calculate_min_voltage(buffer2,NUM_SAMPLES);
-        if(max_min_move >= NUM_SAMPLES){
-
-            max_average_1 = calculate_average(max_1,NUM_SAMPLES);
-            min_average_1 = calculate_average(min_1,NUM_SAMPLES);           
-            max_average_2 = calculate_average(max_2,NUM_SAMPLES);
-            min_average_2 = calculate_average(min_2,NUM_SAMPLES);
+        buffer_move = 0;
+        if(max_min_move >= 16){
+            max_average_1 = calculate_average(max_1,16);
+            min_average_1 = calculate_average(min_1,16);           
+            max_average_2 = calculate_average(max_2,16);
+            min_average_2 = calculate_average(min_2,16);
             max_min_move = 0;
         }else{
             max_min_move ++;
@@ -192,10 +180,10 @@ int main(void)
     
     SYSTEM_Initialize();
     
-    /*
-    generaonda();
-    filtrar();
-    */
+    
+    //generaonda();
+    //filtrar();
+    
     
     contrastScreen();
     clearScreen();

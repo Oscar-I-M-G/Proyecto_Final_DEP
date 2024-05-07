@@ -90,10 +90,12 @@
       <itemPath>pintar_lcd.c</itemPath>
       <itemPath>../../../../Desktop/Codingo Projects/filtroPA.s</itemPath>
       <itemPath>funciones.c</itemPath>
+      <itemPath>../../../../Desktop/Filtros/FiltrosPasaBanda.s</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
     <Elem>../../../../Desktop/Codingo Projects</Elem>
+    <Elem>../../../../Desktop/Filtros</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

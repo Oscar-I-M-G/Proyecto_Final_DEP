@@ -1,6 +1,5 @@
 
 #include <math.h>
-
 float calculate_rms(uint16_t* samples, uint8_t num_samples) {
     
     float sum_squared = 0.0;
@@ -43,6 +42,8 @@ float calculate_average(uint16_t* samples,uint8_t num_samples){
     for (uint8_t i = 0; i < num_samples; i++) {
         sum += (float)samples[i];
     }
-    average = sum / num_samples;
+    average = sum / (float)num_samples;
     return average;
 }
+
+
