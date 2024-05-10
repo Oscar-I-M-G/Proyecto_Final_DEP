@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1715295667.78451 "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" "documentation.pdf" "documentation" 1715295669.85057 0
+["pdflatex"] 1715357259.60134 "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" "documentation.pdf" "documentation" 1715357261.6034 0
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1713524671.73543 1436 c7f957a372ef2fbe93c0982f96625e12 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx10.tfm" 1713524670.86644 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/Library/Application Support/MiKTeX/texmfs/install/fonts/tfm/public/cm/cmbx12.tfm" 1713524670.86665 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -119,7 +119,7 @@
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/tools/calc.sty" 1713524673.54362 10214 547fd4d29642cb7c80bf54b49d447f01 ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xcolor/xcolor.sty" 1713524683.36498 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/Library/Application Support/MiKTeX/texmfs/install/tex/latex/xkeyval/xkeyval.sty" 1713524683.46158 4937 4ce600ce9bd4ec84d0250eb6892fcf4f ""
-  "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" 1715295664.46451 9824 5e1159e84e5adc2c23b07a6059738648 ""
+  "/Users/oimg/Documents/trabajosdsPIC/Final_Project/LATEX_Documentation/documentation.tex" 1715357258.43625 9429 242f6646464676e38f1006cc7f0d714b ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map" 1713614540.92134 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1713525610.47022 11548 0b908e57682b3ae85146d673c9bc746c ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1713525605.51028 21058183 55e14a2eedb1b5b20625023c73ba24c8 ""
@@ -130,8 +130,8 @@
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.cfg" 1713529391.45224 1104 d237cad3f14be9fd91fe1f904d051a01 ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/geometry/geometry.sty" 1713529391.45266 42759 e63af52ccddba7489ac0e17d6a3344bd ""
   "/Users/oimg/Library/Application Support/MiKTeX/texmfs/install/tex/latex/todonotes/todonotes.sty" 1713533495.28078 21404 916e19cbd009b6d289c8194b313d3895 ""
-  "documentation.aux" 1715295669.61326 3775 47eb6a243f52da870c8fe365580388d2 "pdflatex"
-  "documentation.tex" 1715295664.46451 9824 5e1159e84e5adc2c23b07a6059738648 ""
+  "documentation.aux" 1715357261.36645 2564 d3c940ecc31466e3459cff279d4c885b "pdflatex"
+  "documentation.tex" 1715357258.43625 9429 242f6646464676e38f1006cc7f0d714b ""
   "images/V1_Espectro.png" 1715294538.32183 28248 e8706b278015c60006fc30320ddb3a49 ""
   "images/V1_Salida.png" 1715294538.32812 40379 38a67769c9c3ce2f85d78cc5f43f7960 ""
   "images/V1_entrada.png" 1715294541.54118 36921 2e30b69b84087249d342bd8542d3554f ""
@@ -142,6 +142,8 @@
   "images/scope_1.png" 1715189510.76951 24047 a475d1c2968f86fcc1f810ff93d2be29 ""
   "images/scope_2.png" 1714392425.37793 21375 62121e743d32e461abdbebaf89634d85 ""
   "images/scope_3.png" 1714392425.38568 21444 5b79213ee32933c137864f3126c08f58 ""
+  "images/senoidal.png" 1715355193.18087 37529 ae327da9ab8aae680a36492968860d91 ""
+  "images/triangular.png" 1715355193.1874 44330 62975e2d4779213893a4330926eee7cc ""
   (generated)
   "documentation.aux"
   "documentation.log"

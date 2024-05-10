@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.4.19)  10 MAY 2024 01:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2024.4.19)  10 MAY 2024 18:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -377,24 +377,6 @@ LaTeX Warning: Label `fig:triangular_3' multiply defined.
 
 LaTeX Warning: Label `sub@fig:triangular_3' multiply defined.
 
-
-LaTeX Warning: Label `fig:triangular_1' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:triangular_1' multiply defined.
-
-
-LaTeX Warning: Label `fig:triangular_2' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:triangular_2' multiply defined.
-
-
-LaTeX Warning: Label `fig:triangular_3' multiply defined.
-
-
-LaTeX Warning: Label `sub@fig:triangular_3' multiply defined.
-
 )
 \openout1 = `documentation.aux'.
 
@@ -477,94 +459,80 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 <images/esquema_og.png, id=4, 1047.915pt x 690.58pt>
 File: images/esquema_og.png Graphic file (type png)
 <use images/esquema_og.png>
-Package pdftex.def Info: images/esquema_og.png  used on input line 67.
+Package pdftex.def Info: images/esquema_og.png  used on input line 66.
 (pdftex.def)             Requested size: 256.07481pt x 168.74574pt.
 <images/scope_1.png, id=6, 803.0pt x 504.88625pt>
 File: images/scope_1.png Graphic file (type png)
 <use images/scope_1.png>
-Package pdftex.def Info: images/scope_1.png  used on input line 89.
+Package pdftex.def Info: images/scope_1.png  used on input line 87.
 (pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
 <images/scope_2.png, id=7, 803.0pt x 504.88625pt>
 File: images/scope_2.png Graphic file (type png)
 <use images/scope_2.png>
-Package pdftex.def Info: images/scope_2.png  used on input line 96.
+Package pdftex.def Info: images/scope_2.png  used on input line 94.
 (pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
 <images/scope_3.png, id=8, 803.0pt x 504.88625pt>
 File: images/scope_3.png Graphic file (type png)
 <use images/scope_3.png>
-Package pdftex.def Info: images/scope_3.png  used on input line 103.
+Package pdftex.def Info: images/scope_3.png  used on input line 101.
 (pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
 [1
 
 {/Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map} <./images/esquema_og.png>]
-File: images/scope_1.png Graphic file (type png)
-<use images/scope_1.png>
-Package pdftex.def Info: images/scope_1.png  used on input line 118.
-(pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
-File: images/scope_2.png Graphic file (type png)
-<use images/scope_2.png>
-Package pdftex.def Info: images/scope_2.png  used on input line 125.
-(pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
-File: images/scope_3.png Graphic file (type png)
-<use images/scope_3.png>
-Package pdftex.def Info: images/scope_3.png  used on input line 132.
-(pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
-File: images/scope_1.png Graphic file (type png)
-<use images/scope_1.png>
-Package pdftex.def Info: images/scope_1.png  used on input line 146.
-(pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
-File: images/scope_2.png Graphic file (type png)
-<use images/scope_2.png>
-Package pdftex.def Info: images/scope_2.png  used on input line 153.
-(pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
-File: images/scope_3.png Graphic file (type png)
-<use images/scope_3.png>
-Package pdftex.def Info: images/scope_3.png  used on input line 160.
-(pdftex.def)             Requested size: 153.64644pt x 96.59961pt.
+<images/senoidal.png, id=20, 803.0pt x 504.88625pt>
+File: images/senoidal.png Graphic file (type png)
+<use images/senoidal.png>
+Package pdftex.def Info: images/senoidal.png  used on input line 119.
+(pdftex.def)             Requested size: 256.07481pt x 161.0122pt.
+<images/triangular.png, id=21, 803.0pt x 504.88625pt>
+File: images/triangular.png Graphic file (type png)
+<use images/triangular.png>
+Package pdftex.def Info: images/triangular.png  used on input line 126.
+(pdftex.def)             Requested size: 256.07481pt x 161.0122pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 171.
+(Font)              <7> on input line 139.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 171.
- [2 <./images/scope_1.png (PNG copy)> <./images/scope_2.png (PNG copy)> <./images/scope_3.png (PNG copy)>]
-<images/V1_entrada.png, id=28, 483.2454pt x 381.1038pt>
+(Font)              <5> on input line 139.
+<images/V1_entrada.png, id=22, 483.2454pt x 381.1038pt>
 File: images/V1_entrada.png Graphic file (type png)
 <use images/V1_entrada.png>
-Package pdftex.def Info: images/V1_entrada.png  used on input line 190.
+Package pdftex.def Info: images/V1_entrada.png  used on input line 158.
 (pdftex.def)             Requested size: 153.64644pt x 121.17065pt.
-<images/V1_Salida.png, id=29, 487.5816pt x 381.1038pt>
+<images/V1_Salida.png, id=23, 487.5816pt x 381.1038pt>
 File: images/V1_Salida.png Graphic file (type png)
 <use images/V1_Salida.png>
-Package pdftex.def Info: images/V1_Salida.png  used on input line 197.
+Package pdftex.def Info: images/V1_Salida.png  used on input line 165.
 (pdftex.def)             Requested size: 153.64644pt x 120.08904pt.
 
-Underfull \hbox (badness 1931) in paragraph at lines 198--198
+Underfull \hbox (badness 1931) in paragraph at lines 166--166
 []\OT1/cmr/m/n/9 (b) |Se~nal filtrada con respecto al
  []
 
-<images/V1_Espectro.png, id=30, 483.2454pt x 381.1038pt>
+<images/V1_Espectro.png, id=24, 483.2454pt x 381.1038pt>
 File: images/V1_Espectro.png Graphic file (type png)
 <use images/V1_Espectro.png>
-Package pdftex.def Info: images/V1_Espectro.png  used on input line 204.
+Package pdftex.def Info: images/V1_Espectro.png  used on input line 172.
 (pdftex.def)             Requested size: 153.64644pt x 121.17065pt.
-<images/V2_entrada.png, id=31, 487.5816pt x 381.1038pt>
+[2 <./images/scope_1.png (PNG copy)> <./images/scope_2.png (PNG copy)> <./images/scope_3.png (PNG copy)> <./images/senoidal.png (PNG copy)> <./images/triangular.png (PNG copy)>]
+<images/V2_entrada.png, id=33, 487.5816pt x 381.1038pt>
 File: images/V2_entrada.png Graphic file (type png)
 <use images/V2_entrada.png>
-Package pdftex.def Info: images/V2_entrada.png  used on input line 217.
+Package pdftex.def Info: images/V2_entrada.png  used on input line 185.
 (pdftex.def)             Requested size: 153.64644pt x 120.08904pt.
-<images/V2_Salida.png, id=32, 487.5816pt x 381.1038pt>
+<images/V2_Salida.png, id=34, 487.5816pt x 381.1038pt>
 File: images/V2_Salida.png Graphic file (type png)
 <use images/V2_Salida.png>
-Package pdftex.def Info: images/V2_Salida.png  used on input line 224.
+Package pdftex.def Info: images/V2_Salida.png  used on input line 192.
 (pdftex.def)             Requested size: 153.64644pt x 120.08904pt.
 
-Underfull \hbox (badness 1931) in paragraph at lines 225--225
+Underfull \hbox (badness 1931) in paragraph at lines 193--193
 []\OT1/cmr/m/n/9 (b) |Se~nal filtrada con respecto al
  []
 
-<images/V2_Espectro.png, id=33, 483.2454pt x 381.1038pt>
+<images/V2_Espectro.png, id=35, 483.2454pt x 381.1038pt>
 File: images/V2_Espectro.png Graphic file (type png)
 <use images/V2_Espectro.png>
-Package pdftex.def Info: images/V2_Espectro.png  used on input line 231.
+Package pdftex.def Info: images/V2_Espectro.png  used on input line 199.
 (pdftex.def)             Requested size: 153.64644pt x 121.17065pt.
 (/Library/Application Support/MiKTeX/texmfs/install/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/03/11 1.10a listings language file
@@ -581,17 +549,17 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16521 strings out of 476358
- 332738 string characters out of 5792223
- 2105493 words of memory out of 5000000
- 38372 multiletter control sequences out of 15000+600000
+ 16410 strings out of 476358
+ 330169 string characters out of 5792223
+ 2098493 words of memory out of 5000000
+ 38261 multiletter control sequences out of 15000+600000
  563294 words of font info for 54 fonts, out of 8000000 for 9000
  0 hyphenation exceptions out of 8191
  99i,9n,101p,515b,1274s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/oimg/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr9.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt8.pfb>
-Output written on documentation.pdf (3 pages, 787605 bytes).
+Output written on documentation.pdf (3 pages, 870182 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 94 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 63 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 73 words of extra memory for PDF output out of 10000 (max. 10000000)
 

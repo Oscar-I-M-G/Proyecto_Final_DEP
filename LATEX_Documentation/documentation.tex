@@ -54,34 +54,32 @@ Este proyecto se centra en realizar medidas sobre dos señales que se obtienen a
 \begin{itemize}
 \item \texttt{main.c}: Este es el archivo principal de mi proyecto.
 \item \texttt{pintar\_lcd.c}: Este archivo se utiliza para funciones relacionadas con la visualización LCD.
-\item \texttt{funciones.c}: Este archivo contiene funciones basicas y necesarias para el proyecto, como la aplicacion de filtros.
+\item \texttt{funciones.c}: Este archivo contiene funciones básicas y necesarias para el proyecto, como la aplicación de filtros.
 \end{itemize}
 
 
 
 \section{Procedimiento}
-Empezamos con la creacion de las funciones basicas del dsPIC utilizando un SSCP para una salida PWM, Cumpliendo el con el esquema proporcionado (Figura \ref{fig:esquema}).
-
+Empezamos con la creación de las funciones básicas del dsPIC utilizando un SSCP para una salida PWM, Cumpliendo él con el esquema proporcionado (Figura \ref{fig:esquema}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{images/esquema_og.png} % Replace with the path to your image
     \caption{Esquema del proyecto}
     \label{fig:esquema}
 \end{figure}
-La salida PWM sale por el RB13 y se conecta con un filtro proporcionado por el profesor.Donde se obtienen las señales senoidal y triangular.
-Ademas de otros cambios:
+La salida PWM sale por el RB13 y se conecta con un filtro proporcionado por el profesor. Donde se obtienen las señales senoidal y triangular.
+Además de otros cambios:
 \begin{itemize}
     \item El pin RE9 (Switch 3) sale de la pantalla de inicio.
     \item El pin RE8 (Switch 2) cambia el tipo de filtro aplicado.
     \item El pin RE7 (Switch 1) cambia el tipo de señal visualizada.
-    \item El pin RA0 (potenciometro) se utiliza para manipular el ciclo de trabajo de la señal PWM.
+    \item El pin RA0 (potenciómetro) se utiliza para manipular el ciclo de trabajo de la señal PWM.
     \item El pin RC1 fue asignado para ADC1, que recibe la señal senoidal.
     \item El pin RC3 fue asignado para ADC2, que recibe la señal triangular.
 \end{itemize}
-    Una mejora seria la implementacion de manipular el ciclo de trabajo con un modulo ADC. Utilizando un potenciometro para manipular el ciclo de trabajo de la señal PWM.
-
+    Una mejora sería la implementación de manipular el ciclo de trabajo con un módulo ADC. Utilizando un potenciómetro para manipular el ciclo de trabajo de la señal PWM.
 \subsection{Señales}
-Posteriormente, realizo las medidas de las señales PWM,visualizado en un osciloscopio. Como se muestra en la Figura \ref{fig:osciloscopio}.
+Posteriormente, realizo las medidas de las señales PWM, visualizado en un osciloscopio. Como se muestra en la Figura \ref{fig:osciloscopio}.
 \begin{figure}[H]
     \centering
     \begin{subfigure}{.3\textwidth}
@@ -107,67 +105,37 @@ Posteriormente, realizo las medidas de las señales PWM,visualizado en un oscilo
     \caption{señal PWM en osciloscopio}
     \label{fig:osciloscopio}
 \end{figure}
-Se diseño que el limite de la señal PWM sea de 1\% a 99\% en su ciclo de trabajo. Se observa que la señal PWM se comporta de manera correcta en el osciloscopio.
+Se diseñó que el límite de la señal PWM sea de 1\% a 99\% en su ciclo de trabajo. Se observa que la señal PWM se comporta de manera correcta en el osciloscopio.
 
-La visualización de la señal senoidal se muestra en la Figura \ref{fig:senoidal}.
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{.3\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/scope_1.png}
-        \caption{Ciclo de trabajo 46\%}
-        \label{fig:senoidal_1}
-    \end{subfigure}%
-    \hfill
-    \begin{subfigure}{.3\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/scope_2.png}
-        \caption{Ciclo de trabajo 99\%}
-        \label{fig:senoidal_2}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}{.3\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/scope_3.png}
-        \caption{Ciclo de trabajo 1\%}
-        \label{fig:senoidal_3}
-    \end{subfigure}
-    \caption{señal senoidal en osciloscopio}
-    \label{fig:senoidal}
-\end{figure}
-\todo{change the images correctly}
+La señal senoidal y triangular se obtiene al filtrar la señal PWM con un filtro analógico.
+El filtro suaviza la forma de onda cuadrada de la señal PWM, eliminando las componentes de alta frecuencia y conservando las componentes de baja frecuencia, lo que resulta en una forma de onda más suave.
+La visualización de la señal senoidal se muestra en la Figura \ref{fig:senoidal}. 
 La visualización de la señal triangular se muestra en la Figura \ref{fig:triangular}.
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.3\textwidth}
+    \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/scope_1.png}
-        \caption{Ciclo de trabajo 46\%}
-        \label{fig:triangular_1}
-    \end{subfigure}
+        \includegraphics[width=\linewidth]{images/senoidal.png}
+        \caption{Senoidal}
+        \label{fig:senoidal}
+    \end{subfigure}%
     \hfill
-    \begin{subfigure}{.3\textwidth}
+    \begin{subfigure}{.5\textwidth}
         \centering
-        \includegraphics[width=\linewidth]{images/scope_2.png}
-        \caption{Ciclo de trabajo 99\%}
-        \label{fig:triangular_2}
+        \includegraphics[width=\linewidth]{images/triangular.png}
+        \caption{Triangular}
+        \label{fig:triangular}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}{.3\textwidth}
-        \centering
-        \includegraphics[width=\linewidth]{images/scope_3.png}
-        \caption{Ciclo de trabajo 1\%}
-        \label{fig:triangular_3}
-    \end{subfigure}
-    \caption{señal triangular en osciloscopio}
-    \label{fig:triangular}
+    \caption{señal senoidal y triangular en osciloscopio}
+    \label{fig:señales}
 \end{figure}
-\todo{change the images correctly}
+
+Se notó, aumentando el ciclo de trabajo aumenta el voltaje máximo de la señal, incluyendo su mínimo y máximo respectivamente.
+Cabe recalcar que el voltaje máximo y mínimo de las señales no exceden de los 0.8 volts. 
 \subsection{Filtros}
-Se implemento un filtro digital a las señales senoidal y triangular. Se utilizo la herramienta de MATLAB Filter Desginer para diseñar el filtro. 
-Primero conociendo la escogiendo una frecuencia adecuada de muestreo por la siguiente formula:
+Se implementó un filtro digital a las señales senoidal y triangular. Se utilizó la herramienta de MATLAB Filter Desginer para diseñar el filtro. 
+Primero conociendo la escogiendo una frecuencia adecuada de muestreo por la siguiente fórmula:
 \begin{equation}
     f_s = 16 * 737 hz = 11792 Hz
 \end{equation}
@@ -235,8 +203,9 @@ Aplication para la señal triangular:
     \label{fig:triangular_filtro}
 \end{figure}
 
+Aplicando los filtros los voltajes toman valores de corriente alterna, donde los voltajes salen simétricos entre sí.
 \section{Código}
-\todo {explicar unas partes del codigo}
+Unos códigos importantes para el proyecto son los siguientes:
 Para calcular el RMS:
 \begin{lstlisting}[language=C]
     -----------------funciones.c-----------------
@@ -248,13 +217,12 @@ Para calcular el RMS:
         sum_squared += (float)samples[i] * (float)samples[i];
     mean_squared = sum_squared / num_samples;
     rms = sqrt(mean_squared);
-    return rms;
-}
+    return rms;}
 \end{lstlisting}
 Para aplicar el filtro FIR:
 \begin{lstlisting}[language=C]
     --------------------main.c-------------------
-    // multiplicacmos por 0x0100 para convertir a fractional
+    // multiplicamos por 0x0100 para convertir a fractional
     buffer_fractional[buffer_move] = buffer[buffer_move] * 0x0100;
     aplicarFiltroFIR(buffer_fractional,buffer_filter,NUM_SAMPLES);
     // dividimos por 0x0100 para convertir a integer
@@ -264,8 +232,7 @@ Para aplicar el filtro FIR:
     extern FIRStruct FIR11792Filter;
     FIRDelayInit (&FIR11792Filter); 
     FIR(num_samples, &output[0], &buffer[0], &FIR11792Filter);
-    return; 
- }
+    return;}
 \end{lstlisting}
 
 \end{document}
