@@ -56,6 +56,152 @@
 */
 /**
   @Summary
+    Sets the GPIO pin, RA0, high using LATA0.
+
+  @Description
+    Sets the GPIO pin, RA0, high using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA0 high (1)
+    channel_AN0_SetHigh();
+    </code>
+
+*/
+#define channel_AN0_SetHigh()          (_LATA0 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RA0, low using LATA0.
+
+  @Description
+    Sets the GPIO pin, RA0, low using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RA0 low (0)
+    channel_AN0_SetLow();
+    </code>
+
+*/
+#define channel_AN0_SetLow()           (_LATA0 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RA0, using LATA0.
+
+  @Description
+    Toggles the GPIO pin, RA0, using LATA0.
+
+  @Preconditions
+    The RA0 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RA0
+    channel_AN0_Toggle();
+    </code>
+
+*/
+#define channel_AN0_Toggle()           (_LATA0 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RA0.
+
+  @Description
+    Reads the value of the GPIO pin, RA0.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RA0
+    postValue = channel_AN0_GetValue();
+    </code>
+
+*/
+#define channel_AN0_GetValue()         _RA0
+/**
+  @Summary
+    Configures the GPIO pin, RA0, as an input.
+
+  @Description
+    Configures the GPIO pin, RA0, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA0 as an input
+    channel_AN0_SetDigitalInput();
+    </code>
+
+*/
+#define channel_AN0_SetDigitalInput()  (_TRISA0 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RA0, as an output.
+
+  @Description
+    Configures the GPIO pin, RA0, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RA0 as an output
+    channel_AN0_SetDigitalOutput();
+    </code>
+
+*/
+#define channel_AN0_SetDigitalOutput() (_TRISA0 = 0)
+/**
+  @Summary
     Sets the GPIO pin, RB10, high using LATB10.
 
   @Description
@@ -200,6 +346,298 @@
 
 */
 #define SCK1_SetDigitalOutput() (_TRISB10 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RC1, high using LATC1.
+
+  @Description
+    Sets the GPIO pin, RC1, high using LATC1.
+
+  @Preconditions
+    The RC1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC1 high (1)
+    channel_AN13_SetHigh();
+    </code>
+
+*/
+#define channel_AN13_SetHigh()          (_LATC1 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RC1, low using LATC1.
+
+  @Description
+    Sets the GPIO pin, RC1, low using LATC1.
+
+  @Preconditions
+    The RC1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC1 low (0)
+    channel_AN13_SetLow();
+    </code>
+
+*/
+#define channel_AN13_SetLow()           (_LATC1 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RC1, using LATC1.
+
+  @Description
+    Toggles the GPIO pin, RC1, using LATC1.
+
+  @Preconditions
+    The RC1 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RC1
+    channel_AN13_Toggle();
+    </code>
+
+*/
+#define channel_AN13_Toggle()           (_LATC1 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RC1.
+
+  @Description
+    Reads the value of the GPIO pin, RC1.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RC1
+    postValue = channel_AN13_GetValue();
+    </code>
+
+*/
+#define channel_AN13_GetValue()         _RC1
+/**
+  @Summary
+    Configures the GPIO pin, RC1, as an input.
+
+  @Description
+    Configures the GPIO pin, RC1, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC1 as an input
+    channel_AN13_SetDigitalInput();
+    </code>
+
+*/
+#define channel_AN13_SetDigitalInput()  (_TRISC1 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RC1, as an output.
+
+  @Description
+    Configures the GPIO pin, RC1, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC1 as an output
+    channel_AN13_SetDigitalOutput();
+    </code>
+
+*/
+#define channel_AN13_SetDigitalOutput() (_TRISC1 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RC2, high using LATC2.
+
+  @Description
+    Sets the GPIO pin, RC2, high using LATC2.
+
+  @Preconditions
+    The RC2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC2 high (1)
+    channel_AN14_SetHigh();
+    </code>
+
+*/
+#define channel_AN14_SetHigh()          (_LATC2 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RC2, low using LATC2.
+
+  @Description
+    Sets the GPIO pin, RC2, low using LATC2.
+
+  @Preconditions
+    The RC2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RC2 low (0)
+    channel_AN14_SetLow();
+    </code>
+
+*/
+#define channel_AN14_SetLow()           (_LATC2 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RC2, using LATC2.
+
+  @Description
+    Toggles the GPIO pin, RC2, using LATC2.
+
+  @Preconditions
+    The RC2 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RC2
+    channel_AN14_Toggle();
+    </code>
+
+*/
+#define channel_AN14_Toggle()           (_LATC2 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RC2.
+
+  @Description
+    Reads the value of the GPIO pin, RC2.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RC2
+    postValue = channel_AN14_GetValue();
+    </code>
+
+*/
+#define channel_AN14_GetValue()         _RC2
+/**
+  @Summary
+    Configures the GPIO pin, RC2, as an input.
+
+  @Description
+    Configures the GPIO pin, RC2, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC2 as an input
+    channel_AN14_SetDigitalInput();
+    </code>
+
+*/
+#define channel_AN14_SetDigitalInput()  (_TRISC2 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RC2, as an output.
+
+  @Description
+    Configures the GPIO pin, RC2, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RC2 as an output
+    channel_AN14_SetDigitalOutput();
+    </code>
+
+*/
+#define channel_AN14_SetDigitalOutput() (_TRISC2 = 0)
 /**
   @Summary
     Sets the GPIO pin, RC3, high using LATC3.
@@ -965,7 +1403,7 @@
     The RD7 must be set to an output.
 
   @Returns
- None.
+    None.
 
   @Param
     None.
@@ -1076,6 +1514,298 @@
 
 */
 #define GREEN_LED_SetDigitalOutput() (_TRISD7 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE7, high using LATE7.
+
+  @Description
+    Sets the GPIO pin, RE7, high using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE7 high (1)
+    SWITCH_1_SetHigh();
+    </code>
+
+*/
+#define SWITCH_1_SetHigh()          (_LATE7 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE7, low using LATE7.
+
+  @Description
+    Sets the GPIO pin, RE7, low using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE7 low (0)
+    SWITCH_1_SetLow();
+    </code>
+
+*/
+#define SWITCH_1_SetLow()           (_LATE7 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE7, using LATE7.
+
+  @Description
+    Toggles the GPIO pin, RE7, using LATE7.
+
+  @Preconditions
+    The RE7 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE7
+    SWITCH_1_Toggle();
+    </code>
+
+*/
+#define SWITCH_1_Toggle()           (_LATE7 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE7.
+
+  @Description
+    Reads the value of the GPIO pin, RE7.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE7
+    postValue = SWITCH_1_GetValue();
+    </code>
+
+*/
+#define SWITCH_1_GetValue()         _RE7
+/**
+  @Summary
+    Configures the GPIO pin, RE7, as an input.
+
+  @Description
+    Configures the GPIO pin, RE7, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE7 as an input
+    SWITCH_1_SetDigitalInput();
+    </code>
+
+*/
+#define SWITCH_1_SetDigitalInput()  (_TRISE7 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE7, as an output.
+
+  @Description
+    Configures the GPIO pin, RE7, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE7 as an output
+    SWITCH_1_SetDigitalOutput();
+    </code>
+
+*/
+#define SWITCH_1_SetDigitalOutput() (_TRISE7 = 0)
+/**
+  @Summary
+    Sets the GPIO pin, RE8, high using LATE8.
+
+  @Description
+    Sets the GPIO pin, RE8, high using LATE8.
+
+  @Preconditions
+    The RE8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE8 high (1)
+    SWITCH_2_SetHigh();
+    </code>
+
+*/
+#define SWITCH_2_SetHigh()          (_LATE8 = 1)
+/**
+  @Summary
+    Sets the GPIO pin, RE8, low using LATE8.
+
+  @Description
+    Sets the GPIO pin, RE8, low using LATE8.
+
+  @Preconditions
+    The RE8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Set RE8 low (0)
+    SWITCH_2_SetLow();
+    </code>
+
+*/
+#define SWITCH_2_SetLow()           (_LATE8 = 0)
+/**
+  @Summary
+    Toggles the GPIO pin, RE8, using LATE8.
+
+  @Description
+    Toggles the GPIO pin, RE8, using LATE8.
+
+  @Preconditions
+    The RE8 must be set to an output.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Toggle RE8
+    SWITCH_2_Toggle();
+    </code>
+
+*/
+#define SWITCH_2_Toggle()           (_LATE8 ^= 1)
+/**
+  @Summary
+    Reads the value of the GPIO pin, RE8.
+
+  @Description
+    Reads the value of the GPIO pin, RE8.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    uint16_t portValue;
+
+    // Read RE8
+    postValue = SWITCH_2_GetValue();
+    </code>
+
+*/
+#define SWITCH_2_GetValue()         _RE8
+/**
+  @Summary
+    Configures the GPIO pin, RE8, as an input.
+
+  @Description
+    Configures the GPIO pin, RE8, as an input.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE8 as an input
+    SWITCH_2_SetDigitalInput();
+    </code>
+
+*/
+#define SWITCH_2_SetDigitalInput()  (_TRISE8 = 1)
+/**
+  @Summary
+    Configures the GPIO pin, RE8, as an output.
+
+  @Description
+    Configures the GPIO pin, RE8, as an output.
+
+  @Preconditions
+    None.
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    <code>
+    // Sets the RE8 as an output
+    SWITCH_2_SetDigitalOutput();
+    </code>
+
+*/
+#define SWITCH_2_SetDigitalOutput() (_TRISE8 = 0)
 /**
   @Summary
     Sets the GPIO pin, RE9, high using LATE9.
@@ -1259,6 +1989,27 @@ void PIN_MANAGER_Initialize (void);
 
 /**
   @Summary
+    Callback for SWITCH_1 Pin.
+
+  @Description
+    This routine is callback for SWITCH_1 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        SWITCH_1_SetInterruptHandler(&SWITCH_1_CallBack);
+    </code>
+*/
+void SWITCH_1_CallBack(void);
+
+/**
+  @Summary
     Callback for SWITCH_3 Pin.
 
   @Description
@@ -1278,6 +2029,67 @@ void PIN_MANAGER_Initialize (void);
 */
 void SWITCH_3_CallBack(void);
 
+/**
+  @Summary
+    Callback for SWITCH_2 Pin.
+
+  @Description
+    This routine is callback for SWITCH_2 Pin
+
+  @Param
+    None.
+
+  @Returns
+    None
+ 
+ 
+  @Example 
+    <code>
+        SWITCH_2_SetInterruptHandler(&SWITCH_2_CallBack);
+    </code>
+*/
+void SWITCH_2_CallBack(void);
+
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_1_SetInterruptHandler(&SWITCH_1_CallBack);
+    </code>
+*/
+void SWITCH_1_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_1_SetIOCInterruptHandler(&SWITCH_1_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_1_SetInterruptHandler instead."))) SWITCH_1_SetIOCInterruptHandler(void *handler);
 
 /**
   @Summary
@@ -1318,6 +2130,46 @@ void SWITCH_3_SetInterruptHandler(void (* InterruptHandler)(void));
     </code>
 */
 void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_3_SetInterruptHandler instead."))) SWITCH_3_SetIOCInterruptHandler(void *handler);
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_2_SetInterruptHandler(&SWITCH_2_CallBack);
+    </code>
+*/
+void SWITCH_2_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Assigns a function pointer with a callback address.
+
+  @Description
+    This routine assigns a function pointer with a callback address.
+
+  @Param
+    Address of the callback routine.
+
+  @Returns
+    None
+ 
+  @Example 
+    <code>
+        SWITCH_2_SetIOCInterruptHandler(&SWITCH_2_CallBack);
+    </code>
+*/
+void __attribute__((deprecated("\nThis will be removed in future MCC releases. \nUse SWITCH_2_SetInterruptHandler instead."))) SWITCH_2_SetIOCInterruptHandler(void *handler);
 
 
 #endif

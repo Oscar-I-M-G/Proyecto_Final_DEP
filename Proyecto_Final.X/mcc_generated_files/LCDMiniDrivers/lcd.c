@@ -42,13 +42,13 @@ void lcd_sendByte(uint8_t byte, bool RSbit){
     uint8_t packetLow = (nibbleLow << 4) | (RSbit << 2);
     
     expander_setOutput(packetHigh);
-    DELAY_milliseconds(2);
+    DELAY_milliseconds(1);
     expander_setOutput(packetHigh | (1<<3));
-    DELAY_milliseconds(2);
+    DELAY_milliseconds(1);
     expander_setOutput(packetLow);
-    DELAY_milliseconds(2);
+    DELAY_milliseconds(1);
     expander_setOutput(packetLow | (1<<3));
-    DELAY_milliseconds(40);
+    DELAY_milliseconds(10);
 }
 
 void lcd_returnHome(void){
