@@ -150,14 +150,14 @@ void __attribute__ ((weak)) SCCP3_COMPARE_CallBack(void)
         buffer[buffer_move] = ADC1_ConversionResultGet(channel_AN14);
     }
     if(filter_type > 0)
-        buffer_fractional[buffer_move] = buffer[buffer_move] * 100; //
+        buffer_fractional[buffer_move] = buffer[buffer_move] * 0x0100; //
     
     if (buffer_move >= NUM_SAMPLES){
             if(filter_type == 1)
             {
                 aplicarFiltroFIR(buffer_fractional,buffer_filter,NUM_SAMPLES);
                 for(uint8_t i=0;i<NUM_SAMPLES;i++){
-                    buffer[i] = buffer_filter[i] / 100;                    
+                    buffer[i] = buffer_filter[i] /0x0100;                    
                 }
             }
             if(filter_type == 2)

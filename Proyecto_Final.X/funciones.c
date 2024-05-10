@@ -50,9 +50,9 @@ float calculate_average(int16_t* samples,uint8_t num_samples){
 }
 
 void aplicarFiltroFIR (fractional* buffer,fractional* output, uint8_t num_samples){
-    extern FIRStruct PasaBandaFilter;
-    FIRDelayInit (&PasaBandaFilter); 
-    FIR(num_samples, &output[0], &buffer[0], &PasaBandaFilter);
+    extern FIRStruct FIR11792Filter;
+    FIRDelayInit (&FIR11792Filter); 
+    FIR(num_samples, &output[0], &buffer[0], &FIR11792Filter);
     return; 
  }
 

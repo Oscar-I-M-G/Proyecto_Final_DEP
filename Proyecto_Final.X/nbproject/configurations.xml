@@ -90,6 +90,7 @@
       <itemPath>pintar_lcd.c</itemPath>
       <itemPath>funciones.c</itemPath>
       <itemPath>../../../../Desktop/Filtros/FiltrosPasaBanda.s</itemPath>
+      <itemPath>../../../../Desktop/Filtros/FIR11792.s</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>
